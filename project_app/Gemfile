@@ -7,6 +7,10 @@ end
 
 # Gem Geokit
 gem 'geokit'
+#HTTParty
+gem 'httparty'
+#Cookie Overflow
+gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
 # Use devise for user authentication
