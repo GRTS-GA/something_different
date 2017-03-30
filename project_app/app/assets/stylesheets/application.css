@@ -13,3 +13,202 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.navigation {
+    width: 100vw;
+    height: 7vh;
+    top: 0;
+    border: 1px solid grey;
+    margin: 0;
+    /*position: fixed;*/
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row-wrap;
+    float: right;
+    margin: 0;
+    top: 0;
+    height: 7vh;
+}
+
+.nav-menu li {
+    list-style-type: none;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    margin: 0;
+    top: 0;
+}
+
+.logo {
+    /*border: 1px solid grey;*/
+    margin: 0;
+    top: 0;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: slategrey;
+}
+
+.landing {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+/*    align-items: center;*/
+    opacity: 0.8;
+    background: url("app_background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search {
+    border: 1px solid lightgrey;
+    background: white;
+    padding: 2%;
+    margin-top: 8%;
+    margin-left: 15%;
+    width: 55vw;
+    height: 20vh;
+    text-align: center;
+}
+
+
+input[type=text] {
+    width: 20%;
+    padding: 2%;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+input[type=submit] {
+    width: 20%;
+    padding: 2%;
+    border: none;
+}
+
+.footer {
+    float: right;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: row-wrap;
+    justify-content: space-around;
+    align-items: center;
+    /*margin-top: 4%;*/
+    opacity: 0.8;
+    background: url("app_background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.events-container {
+    display: flex;
+    flex-direction: row-wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    /*margin-top: 4%;*/
+    opacity: 0.8;
+    background: url("app_background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.sidebar-profile {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    background-color: white;
+    width: 20vw;
+    height: 70vh;
+    margin-top: 3%;
+}
+
+.sidebar-events {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    background-color: white;
+    width: 20vw;
+    height: 25vh;
+    margin-top: 3%;
+    padding: 1%;
+}
+
+.main-profile {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    background-color: white;
+    width: 40vw;
+    height: 70vh;
+    padding: 4%;
+    margin-top: 3%;
+}
+
+.main-events {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid lightgrey;
+    background-color: white;
+    width: 50vw;
+    height: 70vh;
+    padding: 4%;
+    margin-top: 3%;
+}
+
+.google-maps, .drop-down-menus {
+    border: 1px solid lightgrey;
+    height: 40vh;
+    margin: 1%;
+}
+
+.profile-pic {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.profile-info {
+    line-height: 3;
+    font-weight: 700;
+}
+
+.my-events {
+    border: 1px solid lightgrey;
+    height: 10vh;
+    margin: 1%;
+
+}
+
+.events-links {
+    padding: 5%;
+    margin-top: 5%;
+}
+
+.searched-events {
+    border: 1px solid lightgrey;
+    height: 25vh;
+    margin: 1%;
+    padding: 3%;
+
+}
