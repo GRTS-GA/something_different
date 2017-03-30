@@ -75,7 +75,7 @@ a {
 
 .search {
     border: 1px solid lightgrey;
-    background: white;
+    background: rgba(255,255,255, 0.9);
     padding: 2%;
 /*    margin-top: 8%;
     margin-left: 15%;*/
