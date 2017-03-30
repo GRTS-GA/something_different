@@ -1,0 +1,7 @@
+<h1>Users</h1>
+
+<% @users.each do |x| %>
+<%= x.full_name %>
+<%= image_tag x.picture.url if x.picture? %>
+<%end%>
+
