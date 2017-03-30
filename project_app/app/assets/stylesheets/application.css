@@ -66,7 +66,7 @@ a {
     display: flex;
 /*    align-items: center;*/
     opacity: 0.8;
-    background: url("/images/app_background.jpg");
+    background: url("app_background.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -111,7 +111,7 @@ input[type=submit] {
     align-items: center;
     /*margin-top: 4%;*/
     opacity: 0.8;
-    background: url("/images/app_background.jpg");
+    background: url("app_background.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -126,7 +126,7 @@ input[type=submit] {
     align-items: flex-start;
     /*margin-top: 4%;*/
     opacity: 0.8;
-    background: url("/images/app_background.jpg");
+    background: url("app_background.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
