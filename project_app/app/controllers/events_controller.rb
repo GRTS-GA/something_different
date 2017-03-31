@@ -23,7 +23,7 @@ def new
 end
 
 def renderEvent
-  byebug
+  
   @event = params[:id]  
 end
 
