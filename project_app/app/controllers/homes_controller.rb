@@ -15,7 +15,7 @@ end
 
  def search 
         result = Geokit::Geocoders::GoogleGeocoder.geocode params[:searchTxt]
-        size="size=10&"
+        size="size=20&"
         apikey="apikey=SHcGoYfhDdUgHYG8fhj9GDo0omliNeD5&"
         latlong="latlong=#{result.ll}&"
         rad = "radius=1&unit=miles"
