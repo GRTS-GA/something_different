@@ -45,28 +45,30 @@ end
 
 
 def saveEvent
-    event = params[:id] 
-
-    address = event["_embedded"]["venues"][0]["address"]["line1"]
-    postalcode = event["_embedded"]["venues"][0]["postalcode"]
-    city = event["_embedded"]["venues"][0]["city"]["name"]
-    state = event["_embedded"]["venues"][0]["state"]["name"]
-    country = event["_embedded"]["venues"][0]["country"]["name"]
-
-
-    newEvent = Event.new()
-    newEvent.user_id = current_user.id
-    newEvent.name = event["name"]
-    newEvent.event_type = event["classifications"][0]["genre"]["name"]
-    newEvent.category = event["classifications"][0]["segment"]["name"]
-    newEvent.event_date= event["dates"]["start"]["localDate"]
-    newEvent.image_url = event["images"][1]["url"]
-    newEvent.address = address+postalcode+city+state+country
-    newEvent.event_url = event["url"]
-
+    url="https://app.ticketmaster.com/discovery/v2/events/#{session[:eventId]}.json?#{apikey}"
+     event= getApi(url).parsed_response
+     session[:activeEventSearch]= session[:eventId]
     if current_user
+        address = event["_embedded"]["venues"][0]["address"]["line1"]
+        postalcode = event["_embedded"]["venues"][0]["postalcode"]
+        city = event["_embedded"]["venues"][0]["city"]["name"]
+        state = event["_embedded"]["venues"][0]["state"]["name"]
+        country = event["_embedded"]["venues"][0]["country"]["name"]
+        byebug
+
+        newEvent = Event.new()
+        newEvent.user_id = current_user.id
+        newEvent.name = event["name"]
+        newEvent.event_type = event["classifications"][0]["genre"]["name"]
+        newEvent.category = event["classifications"][0]["segment"]["name"]
+        newEvent.event_date= event["dates"]["start"]["localDate"]
+        newEvent.image_url = event["images"][1]["url"]
+        newEvent.address = address+postalcode+city+state+country
+        newEvent.event_url = event["url"]
+
       if event.save
         redirect_to event_details_path(event["id"])
+        session[:activeEventSearch] = nil
       else
         redirect_to event_details_path(event["id"])
       end
