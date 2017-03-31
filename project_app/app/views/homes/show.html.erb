@@ -1,0 +1,25 @@
+
+
+<%= image_tag @event["images"][1]["url"] %>
+<p>Name: <h2><%=@event["name"]%> <h2></p>
+<p>Category: <%=@event["classifications"][0]["segment"]["name"]%> </p>
+<p>Type: <%=@event["classifications"][0]["genre"]["name"]%> </p>
+<p>Start Date: <%=@event["dates"]["start"]["localDate"]%> </p>
+<p>End Date: <%=@event["sales"]["public"]["endDateTime"]%> </p>
+<p>Status: <%=@event["dates"]["status"]["code"]%> </p>
+<p>Time: <%=@event["dates"]["start"]["localTime"]%> </p>
+<p>Venue: <%=@event["_embedded"]["venues"][0]["name"]%> </p>
+<p>Address: <%=@event["_embedded"]["venues"][0]["address"]["line1"]%>, 
+       <%= @event["_embedded"]["venues"][0]["postalcode"]%>,  
+        <%=@event["_embedded"]["venues"][0]["city"]["name"]%>,  
+        <%=@event["_embedded"]["venues"][0]["state"]["name"]%>, 
+         <%=@event["_embedded"]["venues"][0]["country"]["name"]%>, 
+         </p>
+
+<h2><%= link_to "See full details",  @event["url"] %>
+
+<%= link_to 'Save event Details', save_event_path(:id => @event) %>
+
+
+
+

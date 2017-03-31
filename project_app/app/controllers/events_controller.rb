@@ -19,9 +19,8 @@ def update
  @event = Event.find(params[:id])
 end
 
-def renderEvent
-  byebug
-  @event = params[:id]
+def renderEvent  
+  @event = params[:id]  
 end
 
 end
