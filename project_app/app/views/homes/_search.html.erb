@@ -4,14 +4,21 @@
 
 
 
-    <ul>
-        <% if @ticket_list %>
+   
+        <% if (defined?(@ticket_list)).nil?  %>
+        <%else%>
             <%= select_tag "events[]", options_for_select(@ticket_list.collect{|x| [x["name"],x["url"]]}), 
             {:multiple => :multiple, :size =>10} %>
-
-            <% @eventClassifiaction.each do |event| %>
-              <li>  <%= link_to event["classifications"][0]["segment"]["name"], get_event_path(:id => event["url"]) %></li>
+        <%end%>
+         
+            <% if (defined?(@eventClassifiaction)).nil?  %>
+            <%else%>
+                <ul>
+                   <% @eventClassifiaction.each do |event| %>
+                        <li>  <%= link_to event["classifications"][0]["segment"]["name"],
+                                 event_class_path(:id => event["classifications"][0]["segment"]["id"]) %></li>
      
-            <% end %>
-        <% end %>
-    </ul>
+                    <% end %>
+                </ul>
+            <%end%>
+        
