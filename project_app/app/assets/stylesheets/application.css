@@ -264,6 +264,10 @@ input[type=email], input[type=password] {
     border: none;
     margin: 3%;
 }
+
+input[type=email]:focus, input[type=password]:focus  {
+    border: 3px solid #555;
+}
 /*end log in page form*/
 /*end login page styling*/
 
@@ -299,6 +303,10 @@ input[type=email], input[type=password] {
     padding: 3%;
     border: 1px solid lightgrey;
     margin: 3%;
+}
+
+#user_full_name:focus, #user_email:focus, #user_password:focus, #user_password_confirmation:focus {
+    border: 3px solid #555;
 }
 /*end signup page styling*/
 
@@ -353,7 +361,7 @@ input[type=email], input[type=password] {
     align-items: center;
     opacity: 0.8;
     height: 90vh;
-    background: url("map_background.jpeg");
+    background: url("http://i.imgur.com/o81UzEw.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -374,6 +382,11 @@ input[type=email], input[type=password] {
 #event_name, #event_type, #event_category, #event_event_date,
 #event_image_url, #event_event_url {
     width: 50%;
+}
+
+#event_name:focus, #event_type:focus, #event_category:focus, #event_event_date:focus,
+#event_image_url:focus, #event_event_url:focus {
+    border: 3px solid #555;
 }
 
 /*end event new styling*/
