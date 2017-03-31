@@ -16,7 +16,7 @@ def new
 end
 
 
-###### Render Search Resut
+###### Render Search Result
  def search 
         result = Geokit::Geocoders::GoogleGeocoder.geocode params[:searchTxt] #Get longitude and latitude of user address
         size="size=20&"
@@ -64,10 +64,14 @@ def saveEvent
     newEvent.address = address+postalcode+city+state+country
     newEvent.event_url = event["url"]
 
-    if event.save
-      redirect_to event_details_path(event["id"])
+    if current_user
+      if event.save
+        redirect_to event_details_path(event["id"])
+      else
+        redirect_to event_details_path(event["id"])
+      end
     else
-      redirect_to event_details_path(event["id"])
+      redirect_to new_user_session_path
     end
 end
 

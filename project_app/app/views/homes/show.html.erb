@@ -5,7 +5,7 @@
 <p>Category: <%=@event["classifications"][0]["segment"]["name"]%> </p>
 <p>Type: <%=@event["classifications"][0]["genre"]["name"]%> </p>
 <p>Start Date: <%=@event["dates"]["start"]["localDate"]%> </p>
-<p>Start Date: <%=@event["sales"]["public"]["endDateTime"]%> </p>
+<p>End Date: <%=@event["sales"]["public"]["endDateTime"]%> </p>
 <p>Status: <%=@event["dates"]["status"]["code"]%> </p>
 <p>Time: <%=@event["dates"]["start"]["localTime"]%> </p>
 <p>Venue: <%=@event["_embedded"]["venues"][0]["name"]%> </p>

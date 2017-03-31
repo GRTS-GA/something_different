@@ -1,3 +1,27 @@
 
+<title>something different | events</title>
+<div class="events-show-container">
+    <div class="events-show">
+        <div class="events-label"><h2><%= @event.name %></h2>
+        </div>
+        <img src=<%= @event.image_url %> class="events-image" /
+        <br/>
+        <div class="events-label"><h3>Date: </h3> <p> <%= @event.event_date %></p>
+        </div>
+        <br/>
+        <div class="events-label"><h3>Category: </h3> <p> <%= @event.category %> </p>
+        </div>
+        <br/>
+        <div class="events-label"><h3>Event type: </h3>
+        </div>
+        <br/>
+        <div class="events-label"><h3>Price: </h3> <%= @event.price %> </p>
+        </div>
+        <div class="events-label">
+        <a href=<%= @event.event_url %><button class="events-button">Purchase Tickets</a>
+        </div>
+        <br/>
+      </div>
 
-<p><%=@event %> </p>
+    </div>
+
