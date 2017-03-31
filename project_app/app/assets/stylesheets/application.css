@@ -323,13 +323,26 @@ input[type=email], input[type=password] {
     flex-direction: column;
     border: 1px solid lightgrey;
     background-color: rgba(255,255,255,0.7);
-    width: 20vw;
-    height: 25vh;
+    width: 30vw;
+    height: 60vh;
     padding: 3%;
     position: absolute;
     top: 20%;
     left: 15%;
-    height: 50vh;
-    width: 30vw;
 }
+
+.events-label h3, .events-label p {
+    display: inline;
+}
+
+.events-label {
+    padding: 3%;
+}
+
+.events-image {
+    max-width: 150px;
+    max-height: 150px;
+    padding-left: 30px;
+}
+
 /*end events show page styling*/

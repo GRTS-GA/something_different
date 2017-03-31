@@ -1,22 +1,24 @@
-
-
-
-<p><%=@event %> </p>
-
 <title>something different | events</title>
 <div class="events-show-container">
     <div class="events-show">
-        <div class="events-image">
+        <div class="events-label"><h2><%= @event.name %></h2>
         </div>
-        <label class="events-label"><strong>Event name: </strong></label> <p><%= @event.name %></p>
+        <img src=<%= @event.image_url %> class="events-image" /
         <br/>
-        <label class="events-label"><strong>Date: </strong></label>
+        <div class="events-label"><h3>Date: </h3> <p> <%= @event.event_date %></p>
+        </div>
         <br/>
-        <label class="events-label"><strong>Category: </strong></label>
+        <div class="events-label"><h3>Category: </h3> <p> <%= @event.category %> </p>
+        </div>
         <br/>
-        <label class="events-label"><strong>Event type: </strong></label>
+        <div class="events-label"><h3>Event type: </h3>
+        </div>
         <br/>
-        <label class="events-label"><strong>Price: </strong></label>
+        <div class="events-label"><h3>Price: </h3> <%= @event.price %> </p>
+        </div>
+        <div class="events-label">
+        <a href=<%= @event.event_url %><button class="events-button"></a>
+        </div>
         <br/>
       </div>
 
