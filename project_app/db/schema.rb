@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170331181816) do
+=======
+ActiveRecord::Schema.define(version: 20170331201339) do
+>>>>>>> 033e62a555fafe39f1c8709ee3bef5f866cac207
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,9 +38,10 @@ ActiveRecord::Schema.define(version: 20170331181816) do
     t.string   "image"
     t.string   "event_url"
     t.float    "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "address"
+    t.boolean  "is_user_created"
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 

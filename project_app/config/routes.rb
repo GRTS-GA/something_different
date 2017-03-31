@@ -6,11 +6,15 @@ Rails.application.routes.draw do
 
 resources :users
  resources :events
+resources :comments
 
-# match '/events/search', to: 'events#search', as: :search  
+# match '/events/search', to: 'events#search', as: :search
 get '/homes',      to: 'homes#index', as: :homes
 post '/homes',      to: 'homes#search'
-get 'homes/renderEvent', to: 'homes#renderEvent', as: :get_event
+get '/homes/searchByClass',      to: 'homes#searchByClass', as: :event_class
+get '/homes/show',      to: 'homes#show', as: :event_details
+get '/homes/saveEvent',      to: 'homes#saveEvent', as: :save_event
+# get 'homes/renderEvent', to: 'homes#renderEvent', as: :get_event
 
 
 root to: "homes#index"
