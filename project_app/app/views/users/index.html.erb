@@ -1,6 +1,14 @@
-<h1>This is the user index </h1>
+<h1>Users</h1>
 
+<% @users.each do |x| %>
+<%= x.full_name %>
+<%= image_tag x.picture.url if x.picture? %>
+<%end%>
+
+<<<<<<< HEAD
 <% @users.each do |user| %>
     <%= user.full_name %>
     
 <% end %>
+=======
+>>>>>>> df63d6258e268ada70577dd569ad12c5689d168d

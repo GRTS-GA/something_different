@@ -2,14 +2,16 @@
     
     
 
+
+
     <ul>
         <% if @ticket_list %>
             <%= select_tag "events[]", options_for_select(@ticket_list.collect{|x| [x["name"],x["url"]]}), 
             {:multiple => :multiple, :size =>10} %>
 
-            <% @ticket_list.each do |event| %>
-                <li><%= event["classifications"][0]["segment"]["name"]%></li>
+            <% @eventClassifiaction.each do |event| %>
+              <li>  <%= link_to event["classifications"][0]["segment"]["name"], get_event_path(:id => event["url"]) %></li>
+     
             <% end %>
         <% end %>
     </ul>
-
