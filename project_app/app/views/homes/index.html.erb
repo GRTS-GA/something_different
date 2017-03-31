@@ -10,10 +10,12 @@
 <body>
     <div class="landing">
         <div class="search">
-            <h1 class="search-h1">Find your something different</h1>
-            <input type="text" name="search" placeholder="Search events" required />
-            <input type="text" name="location" placeholder="Location" required />
-            <input type="submit" value="Search" />
+            <%= render 'form' %>
+
+            <% if @ticket_list%>
+                <%= render 'search' %>
+            <%end%>
+
         </div>
     </div>
 

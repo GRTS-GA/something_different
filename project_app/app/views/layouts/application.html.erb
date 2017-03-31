@@ -16,7 +16,7 @@
               <li><%= link_to "Home", root_path %></li>
               <% if current_user %>
                   <li>Hello, <%= current_user.email %></li>
-                  <li><%= link_to "BROWSE EVENTS", events_path %></li>
+                   <li><%=link_to "BROWSE EVENTS", events_path %></li>
                   <li><%= link_to "CREATE AN EVENT", new_event_path %></li>
                   <li><%= link_to "PROFILE", user_path(current_user.id) %></li>
                   <li><%= link_to 'LOG OUT', destroy_user_session_path, :method => :delete %> </li>
