@@ -1,7 +1,7 @@
 class HomesController < ApplicationController
   # before_action :set_event, only: [:show, :edit, :update, :destroy]
 def index
-  
+
 end
 
 #display select event deatils
@@ -12,35 +12,35 @@ end
 
 
 def new
- 
+
 end
 
 
 ###### Render Search Result
- def search 
+ def search
         result = Geokit::Geocoders::GoogleGeocoder.geocode params[:searchTxt] #Get longitude and latitude of user address
         size="size=20&"
         session[:latlong]="&latlong=#{result.ll}&"
         session[:rad] = "radius=1&unit=miles"
-        
+
         session[:initialUrl] ="https://app.ticketmaster.com/discovery/v2/events.json?"+size+apikey+
-                              session[:latlong]+session[:rad] 
-     
+                              session[:latlong]+session[:rad]
+
          ticket_list= getApi(session[:initialUrl]).parsed_response["_embedded"]["events"]
         @eventClassifiaction = ticket_list.uniq { |e| e["classifications"][0]["segment"]["name"] }
-       
-        render :index 
+
+        render :index
     end
 
 ###### Search Event by category
   def searchByClass
          @ticket_list= getApi(session[:initialUrl]).
           parsed_response["_embedded"]["events"].each  do |e|
-            e["classifications"][0]["segment"]["name"] === params[:id] 
+            e["classifications"][0]["segment"]["name"] === params[:id]
           end
-       
-      render :index 
-      
+
+      render :index
+
   end
 
 
@@ -54,7 +54,6 @@ def saveEvent
         city = event["_embedded"]["venues"][0]["city"]["name"]
         state = event["_embedded"]["venues"][0]["state"]["name"]
         country = event["_embedded"]["venues"][0]["country"]["name"]
-        byebug
 
         newEvent = Event.new()
         newEvent.user_id = current_user.id
