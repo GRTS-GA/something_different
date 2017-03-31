@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     response = HTTParty.get(address)
   end
 
+  def apikey
+    apkey="apikey=SHcGoYfhDdUgHYG8fhj9GDo0omliNeD5"
+  end
+
 
 
 end
