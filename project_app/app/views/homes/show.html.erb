@@ -15,7 +15,7 @@
         <%=@event["_embedded"]["venues"][0]["state"]["name"]%>, 
          <%=@event["_embedded"]["venues"][0]["country"]["name"]%>, 
          </p>
-<h1><%=session[:activeEventSearch]%></h1>
+
 <h2><%= link_to "See full details",  @event["url"] %>
 <% session[:eventId]=@event["id"]%>
 <%= link_to 'Save event Details', save_event_path %>

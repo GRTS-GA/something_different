@@ -556,4 +556,35 @@ input[type=password]:focus {
 }
 
 
+/***   Tunde : for message  ***/
+
+div.flash {
+    background-color: antiquewhite;
+    display: none;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+div.notice {
+    border: 1px solid green;
+}
+
+div.alert {
+    border: 1px solid red;
+}
+
+p.flash-text {
+    text-align: center;
+    font-weight: bold;
+}
+
+p.notice {
+    color: green;
+}
+
+p.alert {
+    color: red;
+}
+
+
 /*end event new styling*/

@@ -26,7 +26,7 @@
               <% end %>
           </ul>
       </nav>
-
+      
 <!--       <div class="navigation">
         <a href="#" class="logo">LOGO</a>
         <ul class="nav-menu">
@@ -37,7 +37,8 @@
             <li><a href="#login">LOG IN</a></li>
         </ul>
       </div> -->
-    <%= yield %>
+      <%= render "layouts/flash" %>
+     <%= yield %>
 
       <div class="footer">
         <p>&copy; Sameny Robunde</p>
