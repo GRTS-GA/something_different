@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-
+  
 # @ticket_list.parsed_response["_embedded"]["events"].first
 
   # before_action :set_event, only: [:show, :edit, :update, :destroy]
@@ -10,10 +10,6 @@ end
 def show
  @event = Event.find(params[:id])
 end
-
-# @ticket_list.parsed_response["_embedded"]["events"].first
-
-  # before_action :set_event, only: [:show, :edit, :update, :destroy]
 
 def new
  @event = Event.create(params[:id])
