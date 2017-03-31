@@ -1,5 +1,6 @@
 
-    <%= form_for(event) do |f|%>
+        # multipart added for image upload
+        <%= form_for(@event), :html => {multipart: => true} do |f|%>
         <%= f.label :name %><br>
         <%= f.text_field :name %><br>
        <br>
@@ -24,4 +25,12 @@
         <br>
         <%= f.submit "Submit"%>
     <% end %>
+
+
+
+
+
+
+
+
 
