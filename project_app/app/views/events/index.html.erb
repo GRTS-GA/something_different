@@ -15,7 +15,7 @@
               </div>
               <div class="event-details">
                   <label>Name: </label> <br>
-                  <h3><%= ev.name %></h3> <br>
+                  <%= link_to ev.name,  event_path(ev) %> <br>
                   <label>Date: </label> <br>
                   <h4><%= ev.event_date %></h4>
             <br>

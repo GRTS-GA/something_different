@@ -212,6 +212,7 @@ input[type=password] {
     height: 70vh;
     padding: 4%;
     margin-top: 3%;
+    margin-left: 5%;
 }
 
 .profile-pic {
@@ -233,8 +234,10 @@ input[type=password] {
 
 .my-events {
     border: 1px solid lightgrey;
-    height: 10vh;
+    height: 50vh;
     margin: 1%;
+    overflow: scroll;
+    padding: 1%;
 }
 
 
@@ -566,3 +569,8 @@ input[type=password]:focus {
 
 
 /*end event new styling*/
+
+img {
+  height: 150px;
+  width: 150px;
+}
