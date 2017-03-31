@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
-
-
+  
 # @ticket_list.parsed_response["_embedded"]["events"].first
 
   # before_action :set_event, only: [:show, :edit, :update, :destroy]
@@ -24,7 +23,6 @@ def renderEvent
   byebug
   @event = params[:id]
 end
-
 
 end
 

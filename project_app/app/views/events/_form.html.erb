@@ -1,5 +1,4 @@
-<div class="create-container">
-  <div class="event-form-container">
+
     <%= form_for(event) do |f|%>
         <%= f.label :name %><br>
         <%= f.text_field :name %><br>
@@ -19,10 +18,10 @@
         <%= f.label :event_url %><br>
         <%= f.text_field :event_url %><br>
         <br>
+
         <%= f.label :address %><br>
         <%= f.text_field :address %><br>
         <br>
-        <%= f.submit %>
+        <%= f.submit "Submit"%>
     <% end %>
-  </div>
-</div>
+
