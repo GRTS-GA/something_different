@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>something different | profile</title>
-</head>
-<body>
+
     <div class="profile-container">
         <div class="sidebar-profile">
             <div class="google-maps">
@@ -17,14 +11,12 @@
             <img src="../../assets/images/female-profile.png" class="profile-pic" />
             <h3><%= @user.full_name %></h3>
             <h4> My Events </h4>
+
+
             <div class="my-events">
-                <h3>Saved events go here</h3>
+                <% @user.events.each do |ev| %>
+                <img src=<%=ev.image_url %> alt="">
+                <h3><%= ev.name %></h3>
+
+                <% end %>
             </div>
-            <div class="my-events">
-                <h3>Saved events go here</h3>
-            </div>
-            <div class="my-events">
-                <h3>Saved events go here</h3>
-            </div>
-</body>
-</html>
