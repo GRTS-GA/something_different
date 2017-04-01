@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :loadactiveEventSearch
+  before_action :loadactiveEventSearch, only:[:create]
    require 'httparty'
    require 'geokit'
 
@@ -13,12 +13,12 @@ class ApplicationController < ActionController::Base
   end
 
 
-
   def loadactiveEventSearch
      if current_user && defined?(session[:activeEventSearch]) #(defined?(session[:activeEventSearch])).nil?
         if session[:activeEventSearch] === nil
         else
-            redirect_to event_details_path(session[:activeEventSearch])
+          redirect_to :controller => '/homes', :action => 'show' , :id=>session[:activeEventSearch] 
+            
         end
       end
    end

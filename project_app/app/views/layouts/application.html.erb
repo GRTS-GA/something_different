@@ -25,6 +25,7 @@
                   <li> <%= link_to "SIGN UP",  new_user_registration_path %> </li>
               <% end %>
           </ul>
+
       </div>
 
 <!--       <div class="navigation">
@@ -37,7 +38,8 @@
             <li><a href="#login">LOG IN</a></li>
         </ul>
       </div> -->
-    <%= yield %>
+      <%= render "layouts/flash" %>
+     <%= yield %>
 
       <div class="footer">
         <p>&copy; Sameny Robunde</p>
