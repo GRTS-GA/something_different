@@ -7,26 +7,24 @@
             </div>
         </div>
         <div class="main-profile">
-            <%= image_tag("female_profile.png", :alt => "rss feed") %>
+            <%= image_tag(@user.picture, :alt => "rss feed") %>
             <h3><%= @user.full_name %></h3>
-            <%= link_to 'Edit Profile', edit_user_path(@user)%> |
+            <p><%= @user.email %></p>
+            <%= link_to 'Edit Profile', edit_user_registration_path%>
 
             <h3> My Events </h3>
             <div class="my-events">
                 <% @user.events.each do |ev| %>
                 <img src=<%=ev.image_url %> alt="">
                 <h3><%= ev.name %></h3>
-
+                <div>
+                    <% ev.comments.each do |com| %>
+                    <img src=<%=com.user.picture %> alt="">
+                    <p><%=com.created_at %></p>
+                    <h5><%=com.user.full_name %></h5>
+                    <p><%=com.content %></p>
+                    <% end %>
+                </div>
                 <% end %>
-            </div>
-
-
-            <h3> My Comments </h3>
-            <div class="my-events">
-                <% @user.comments.each do |ev| %>
-                <img src=<%=ev.image_url %> alt="">
-                <h3><%= ev.name %></h3>
-
-            <% end %>
             </div>
         </div>
