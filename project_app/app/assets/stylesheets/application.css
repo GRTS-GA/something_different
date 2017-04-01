@@ -235,6 +235,7 @@ input[type=password] {
     height: 70vh;
     padding: 4%;
     margin-top: 3%;
+    margin-left: 5%;
 }
 
 .profile-pic {
@@ -256,8 +257,10 @@ input[type=password] {
 
 .my-events {
     border: 1px solid lightgrey;
-    height: 10vh;
+    height: 50vh;
     margin: 1%;
+    overflow: scroll;
+    padding: 1%;
 }
 
 
@@ -308,14 +311,20 @@ input[type=password] {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+<<<<<<< HEAD
     background-size: cover;
     flex-direction: column;*/
+=======
+    background-size: cover;*/
+    flex-direction: column;
+>>>>>>> 033e62a555fafe39f1c8709ee3bef5f866cac207
     border: 1px solid lightgrey;
     background-color: white;
     width: 50vw;
     height: 70vh;
     padding: 4%;
     margin-top: 3%;
+    overflow: scroll;
 }
 
 .events-links {
@@ -325,9 +334,17 @@ input[type=password] {
 
 .searched-events {
     border: 1px solid lightgrey;
-    height: 25vh;
+    height: 50%;
     margin: 1%;
     padding: 3%;
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.searched-img {
+  width: 100px;
+  height: 100px;
 }
 
 
@@ -534,7 +551,6 @@ input[type=password]:focus {
     width: 30vw;
     height: 75vh;
     border: 1px solid lightgrey;
-    height: 10vh;
     margin: 1%;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 3%;
@@ -542,6 +558,7 @@ input[type=password]:focus {
     left: 45%;
     position: absolute;
 }
+
 
 #event_name,
 #event_type,
@@ -561,4 +578,30 @@ input[type=password]:focus {
     border: 3px solid #555;
 }
 
+<<<<<<< HEAD
+=======
+/*.searched-events {
+    border: 1px solid lightgrey;
+    height: 25vh;
+    margin: 1%;
+    padding: 3%;
+}*/
+
+/*.searchedevent {
+    display: flex;
+}
+
+.searchedevent img {
+    height: 50%;
+    width: 50%;
+    border-radius: 50% 50%
+}*/
+
+
+>>>>>>> 033e62a555fafe39f1c8709ee3bef5f866cac207
 /*end event new styling*/
+
+img {
+  height: 150px;
+  width: 150px;
+}
