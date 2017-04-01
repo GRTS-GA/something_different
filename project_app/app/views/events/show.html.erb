@@ -6,21 +6,42 @@
         </div>
         <img src=<%= @event.image_url %> class="events-image" />
         <br/>
+        <div class="events-label"><h3>From: </h3> <p> <%= @event.user.full_name %> </p>
+        </div>
+        <br/>
         <div class="events-label"><h3>Date: </h3> <p> <%= @event.event_date %></p>
         </div>
         <br/>
         <div class="events-label"><h3>Category: </h3> <p> <%= @event.category %> </p>
         </div>
         <br/>
-        <div class="events-label"><h3>Event type: </h3>
+        <div class="events-label"><h3>Event type: </h3> <p><%= @event.event_type %> </p>
         </div>
         <br/>
         <div class="events-label"><h3>Price: </h3> <p><%= @event.price %> </p>
+        </div>
+        <br/>
+        <div class="events-label"><h3>Address: </h3> <p><%= @event.address %> </p>
         </div>
         <div class="events-label">
         <a href=<%= @event.event_url %> ><button class="events-button">Purchase Tickets</button></a>
         </div>
         <br/>
+        <%= link_to "Add Comment", new_comment_path %>
+        <br>
+        <div class="event_comments">
+            <% @event.comments.each do |com| %>
+            <img src=<%=com.user.picture %> alt="">
+            <p><%=com.created_at %></p>
+            <h5><%=com.user.full_name %></h5>
+            <p><%=com.content %></p>
+            <% if current_user.id == com.user_id %>
+                <%= link_to "Edit", edit_comment_path(com) %> |
+                <%= link_to "Delete", com, method: :delete, data: { confirm: "Are you sure?"} %>
+            <% end %>
+            <hr>
+            <% end %>
+        </div>
     </div>
     </div>
 

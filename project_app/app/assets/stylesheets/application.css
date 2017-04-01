@@ -106,7 +106,7 @@ a {
 }
 
 .search-results {
-    display: none;
+/*    display: none;*/
     background-color: rgba(255,255,255,0.9);
     border: 1px solid lightgrey;
     width: 60vw;
@@ -301,6 +301,7 @@ input[type=password] {
 
 .main-events {
     display: flex;
+    flex-direction: column;
     /*    flex-direction: row-wrap;
     justify-content: space-around;*/
     align-items: center;
@@ -334,7 +335,7 @@ input[type=password] {
     padding: 3%;
     width: 90%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
 }
 
 .searched-img {
@@ -617,5 +618,9 @@ p.alert {
     color: red;
 }
 
-
+/*Geny: temporary fix to keep it from blocking form*/
+.logo {
+  height: 45px;
+  width: 70px;
+}
 /*end event new styling*/
