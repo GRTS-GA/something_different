@@ -1,7 +1,8 @@
     <%= form_for(comment) do |f|%>
         <%= f.hidden_field :user_id %><br>
 
-        <%= f.hidden_field :event_id %><br>
+        <%= f.label :event %><br>
+        <%= f.collection_select :event_id, Event.order(:name),:id,:name, include_blank: true %>
 
         <%= f.label :comment %><br>
         <%= f.text_area :content %><br>

@@ -6,6 +6,8 @@
             <div class="drop-down-menus">
             </div>
         </div>
+
+        <% if current_user.id == @user.id %>
         <div class="main-profile">
             <%= image_tag(@user.picture, :alt => "rss feed") %>
             <h3><%= @user.full_name %></h3>
@@ -15,16 +17,19 @@
             <h3> My Events </h3>
             <div class="my-events">
                 <% @user.events.each do |ev| %>
-                <img src=<%=ev.image_url %> alt="">
-                <h3><%= ev.name %></h3>
-                <div>
-                    <% ev.comments.each do |com| %>
-                    <img src=<%=com.user.picture %> alt="">
-                    <p><%=com.created_at %></p>
-                    <h5><%=com.user.full_name %></h5>
-                    <p><%=com.content %></p>
-                    <% end %>
-                </div>
+                    <img src=<%=ev.image_url %> alt=""><br>
+                    <%=link_to ev.name, event_path(ev) %><br>
+                    <p><%= ev.event_date %></p><br>
+                    <%= link_to "Edit", edit_event_path(ev) %> |
+                    <%= link_to "Delete", ev, method: :delete, data: { confirm: "Are you sure?"} %><br>
+                    <hr>
                 <% end %>
             </div>
         </div>
+
+        <% else %>
+            <div>
+                <h3>You are not authorized to view this page.</h3>
+            </div>
+        <% end %>
+
