@@ -1,30 +1,29 @@
 
-       <%= #select_tag "events[]", options_for_select(@ticket_list.collect{|x| [x["name"],x["url"]]}), 
-            #{:multiple => :multiple, :size =>10} 
+       <%= #select_tag "events[]", options_for_select(@ticket_list.collect{|x| [x["name"],x["url"]]}),
+            #{:multiple => :multiple, :size =>10}
             %>
 
-  
-   
+
+
         <% if (defined?(@ticket_list)).nil?  %>
         <%else%>
-         
+
                <% @ticket_list.each do | event | %>
-                    <div class="searchedevent">
                             <%= image_tag event["images"][0]["url"]%>
                             <h2><%= link_to event["name"], event_details_path(:id => event["id"]) %></h2>
-                    </div>
                 <%end%>
-            
+
         <%end%>
-         
+
             <% if (defined?(@eventClassifiaction)).nil?  %>
             <%else%>
                 <ul>
                    <% @eventClassifiaction.each do |event| %>
-                        <li>  <%= link_to event["classifications"][0]["segment"]["name"],
+                        <li class="category-links">  <%= link_to event["classifications"][0]["segment"]["name"],
                             event_class_path(:id => event["classifications"][0]["segment"]["id"]) %>
                         </li>
                     <% end %>
                 </ul>
+                </div>
             <%end%>
-        
+

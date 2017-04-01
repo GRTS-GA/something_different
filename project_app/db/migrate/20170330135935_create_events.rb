@@ -8,7 +8,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.datetime :event_date
       t.string :image_url
       t.string :event_url
-      t.float :price
+      t.integer :price
       t.belongs_to :user, index: true
 
       t.timestamps

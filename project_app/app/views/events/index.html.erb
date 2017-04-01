@@ -16,16 +16,13 @@
               <%= image_tag ev.image.url if ev.image? %>
               </div>
               <div class="event-details">
-                  <label>Name: </label> <br>
+                  <label>Name: </label>
                   <%= link_to ev.name,  event_path(ev) %> <br>
-                  <label>Date: </label> <br>
-                  <h4><%= ev.event_date %></h4>
-            <br>
+                  <label>Date: </label>
+                  <p><%= ev.event_date %></p>
               </div>
-
-
             </div>
-            <br>
+            <hr>
             <% end %>
         </div>
         </div>
