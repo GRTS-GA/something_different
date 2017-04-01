@@ -23,7 +23,7 @@
 
             <h3> My Comments </h3>
             <div class="my-events">
-                <% @user.events.each do |ev| %>
+                <% @user.comments.each do |ev| %>
                 <img src=<%=ev.image_url %> alt="">
                 <h3><%= ev.name %></h3>
 
