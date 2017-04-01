@@ -19,7 +19,7 @@
             <%else%>
                 <ul>
                    <% @eventClassifiaction.each do |event| %>
-                        <li>  <%= link_to event["classifications"][0]["segment"]["name"],
+                        <li class="category-links">  <%= link_to event["classifications"][0]["segment"]["name"],
                             event_class_path(:id => event["classifications"][0]["segment"]["id"]) %>
                         </li>
                     <% end %>
