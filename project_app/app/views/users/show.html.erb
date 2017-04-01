@@ -1,0 +1,32 @@
+
+    <div class="profile-container">
+        <div class="sidebar-profile">
+            <div class="google-maps">
+            </div>
+            <div class="drop-down-menus">
+            </div>
+        </div>
+        <div class="main-profile">
+            <%= image_tag("female_profile.png", :alt => "rss feed") %>
+            <h3><%= @user.full_name %></h3>
+            <%= link_to 'Edit Profile', edit_user_path(@user)%> |
+
+            <h3> My Events </h3>
+            <div class="my-events">
+                <% @user.events.each do |ev| %>
+                <img src=<%=ev.image_url %> alt="">
+                <h3><%= ev.name %></h3>
+
+                <% end %>
+            </div>
+
+
+            <h3> My Comments </h3>
+            <div class="my-events">
+                <% @user.comments.each do |ev| %>
+                <img src=<%=ev.image_url %> alt="">
+                <h3><%= ev.name %></h3>
+
+            <% end %>
+            </div>
+        </div>
