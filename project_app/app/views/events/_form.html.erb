@@ -1,5 +1,6 @@
 
     <%= form_for(event) do |f|%>
+        <%= f.hidden_field :user_id %><br>
         <%= f.label :name %><br>
         <%= f.text_field :name %><br>
        <br>
