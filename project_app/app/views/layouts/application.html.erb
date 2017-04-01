@@ -10,8 +10,8 @@
 
   <body>
 
-      <nav class="navigation">
-          <a href="#" class="logo">LOGO</a>
+      <div class="navigation">
+          <img src="http://i.imgur.com/2aOYONY.jpg" class="logo" />
           <ul class="nav-menu">
               <li><%= link_to "Home", root_path %></li>
               <% if current_user %>
@@ -25,7 +25,8 @@
                   <li> <%= link_to "SIGN UP",  new_user_registration_path %> </li>
               <% end %>
           </ul>
-      </nav>
+
+      </div>
 
 <!--       <div class="navigation">
         <a href="#" class="logo">LOGO</a>
@@ -37,7 +38,8 @@
             <li><a href="#login">LOG IN</a></li>
         </ul>
       </div> -->
-    <%= yield %>
+      <%= render "layouts/flash" %>
+     <%= yield %>
 
       <div class="footer">
         <p>&copy; Sameny Robunde</p>
