@@ -1,14 +1,38 @@
-<div class="events-container">
+
+
+    <div class="events-container">
         <div class="sidebar-events">
             <h2 class="events-links"><a href="/">SEARCH AGAIN</a></h2>
             <h2 class="events-links"><a href="../events/new">CREATE AN EVENT</a></h2>
         </div>
         <div class="main-events">
+            <h1> ALL EVENTS </h1>
           <% @events.each do |ev| %>
             <div class="searched-events">
-              <h3><%= ev.name %></h3>
+
+              <div class="searched-img">
+                  <img src=<%= ev.image_url %> alt="">
+              </div>
+              <div class="event-details">
+                  <label>Name: </label> <br>
+                  <%= link_to ev.name,  event_path(ev) %> <br>
+                  <label>Date: </label> <br>
+                  <h4><%= ev.event_date %></h4>
+            <br>
+                   <%= render './comments/count', event: ev%>
+                    
+
+                    <div class="commentdiv" id="commentbox">
+                        <% @comment.event_id = ev.id %>
+                        <%= render './comments/form', comment: @comment%>
+
+                    </div>
+              </div>
+
+
             </div>
-          <% end %>
+            <br>
+            <% end %>
+        </div>
         </div>
 
-    </div>

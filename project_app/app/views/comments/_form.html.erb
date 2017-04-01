@@ -1,0 +1,11 @@
+<%= form_for (comment)  do | f |%>
+    
+        
+        <%= f.text_area :content, placeholder: "Click to add comment", class: "commentBox", require: true%><br>
+        
+        <%=f.hidden_field :event_id%>
+        
+
+       <%= f.submit "Submit", class: "submitBtn" %>
+
+<%end%>

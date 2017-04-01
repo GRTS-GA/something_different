@@ -1,10 +1,10 @@
 class HomesController < ApplicationController
   # before_action :set_event, only: [:show, :edit, :update, :destroy]
 def index
-  
+
 end
 
-#display select event deatils
+#display select event deatils by event id
 def show
   if params[:id]
     url="https://app.ticketmaster.com/discovery/v2/events/#{params[:id]}.json?#{apikey}"
@@ -17,39 +17,40 @@ end
 
 
 def new
- 
+
 end
 
 
 ###### Render Search Result
- def search 
+ def search
         result = Geokit::Geocoders::GoogleGeocoder.geocode params[:searchTxt] #Get longitude and latitude of user address
         size="size=20&"
         session[:latlong]="&latlong=#{result.ll}&"
         session[:rad] = "radius=1&unit=miles"
-        
+
         session[:initialUrl] ="https://app.ticketmaster.com/discovery/v2/events.json?"+size+apikey+
-                              session[:latlong]+session[:rad] 
-     
+                              session[:latlong]+session[:rad]
+
          ticket_list= getApi(session[:initialUrl]).parsed_response["_embedded"]["events"]
         @eventClassifiaction = ticket_list.uniq { |e| e["classifications"][0]["segment"]["name"] }
-       
-        render :index 
+
+        render :index
     end
 
 ###### Search Event by category
   def searchByClass
-    session[:activeEventSearch] = nil
-         @ticket_list= getApi(session[:initialUrl]).
-          parsed_response["_embedded"]["events"].each  do |e|
-            e["classifications"][0]["segment"]["name"] === params[:id] 
-          end
-       
-      render :index 
+
+      session[:activeEventSearch] = nil
+      @ticket_list= getApi(session[:initialUrl]).
+      parsed_response["_embedded"]["events"].select  do |e|
+        e["classifications"][0]["segment"]["id"] === params[:id]
+      end
       
+      render :index
+
   end
 
-
+#########   save event details from ticket master into database
 def saveEvent
     url="https://app.ticketmaster.com/discovery/v2/events/#{session[:eventId]}.json?#{apikey}"
      event= getApi(url).parsed_response
