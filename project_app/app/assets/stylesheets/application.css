@@ -312,8 +312,18 @@ input[type=password] {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+<<<<<<< HEAD
+<<<<<<< HEAD
     background-size: cover;
     flex-direction: column;*/
+=======
+    background-size: cover;*/
+    flex-direction: column;
+>>>>>>> 033e62a555fafe39f1c8709ee3bef5f866cac207
+=======
+    background-size: cover;
+    flex-direction: column;*/
+>>>>>>> 7f405c37bab689d5ee2c370da92ac6bdbe313fa5
     border: 1px solid lightgrey;
     background-color: white;
     width: 50vw;
@@ -574,7 +584,18 @@ input[type=password]:focus {
     border: 3px solid #555;
 }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/*.searched-events {
+    border: 1px solid lightgrey;
+    height: 25vh;
+    margin: 1%;
+    padding: 3%;
+}*/
+=======
 /*end event new styling*/
+>>>>>>> 7f405c37bab689d5ee2c370da92ac6bdbe313fa5
 
 img {
   height: 150px;
@@ -588,7 +609,12 @@ img {
 }
 
 
+<<<<<<< HEAD
+>>>>>>> 033e62a555fafe39f1c8709ee3bef5f866cac207
+/*end event new styling*/
+=======
 /***   Tunde : for message  ***/
+>>>>>>> 7f405c37bab689d5ee2c370da92ac6bdbe313fa5
 
 div.flash {
     background-color: antiquewhite;
