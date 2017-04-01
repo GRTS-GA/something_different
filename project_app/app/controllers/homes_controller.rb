@@ -6,7 +6,12 @@ end
 
 #display select event deatils
 def show
+  if params[:id]
     url="https://app.ticketmaster.com/discovery/v2/events/#{params[:id]}.json?#{apikey}"
+  else
+     url="https://app.ticketmaster.com/discovery/v2/events/#{session[:eventId]}.json?#{apikey}"
+  end
+    session[:activeEventSearch] = nil
      @event= getApi(url).parsed_response
 end
 
@@ -34,6 +39,7 @@ end
 
 ###### Search Event by category
   def searchByClass
+    session[:activeEventSearch] = nil
          @ticket_list= getApi(session[:initialUrl]).
           parsed_response["_embedded"]["events"].each  do |e|
             e["classifications"][0]["segment"]["name"] === params[:id]
@@ -55,9 +61,12 @@ def saveEvent
         state = event["_embedded"]["venues"][0]["state"]["name"]
         country = event["_embedded"]["venues"][0]["country"]["name"]
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 033e62a555fafe39f1c8709ee3bef5f866cac207
+=======
+>>>>>>> 7f405c37bab689d5ee2c370da92ac6bdbe313fa5
 
         newEvent = Event.new()
         newEvent.user_id = current_user.id
@@ -66,15 +75,20 @@ def saveEvent
         newEvent.category = event["classifications"][0]["segment"]["name"]
         newEvent.event_date= event["dates"]["start"]["localDate"]
         newEvent.image_url = event["images"][1]["url"]
-        newEvent.address = address+postalcode+city+state+country
+        newEvent.address = "#{address},#{postalcode},#{city},#{state},#{country}"
         newEvent.event_url = event["url"]
-
-      if event.save
-        redirect_to event_details_path(event["id"])
-        session[:activeEventSearch] = nil
-      else
-        redirect_to event_details_path(event["id"])
-      end
+        if Event.where({user_id: "#{current_user.id}" , event_url:"#{event["url"]}"})
+            flash[:notice] = "This event is saved already!"
+           redirect_to event_details_path(session[:eventId])
+        else
+            if newEvent.save
+              flash[:notice] = "This event is saved successfully!"
+              redirect_to event_details_path(session[:eventId])
+          else
+              redirect_to event_details_path(session[:eventId])
+          end
+        end
+      
     else
       redirect_to new_user_session_path
     end

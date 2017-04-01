@@ -1,1 +1,9 @@
-index.html.erb
+All comments
+
+<% @comments.each do |comm| %>
+    <img src=<%=comm.user.picture %> alt="">
+    <p><%=comm.created_at %></p>
+    <h5><%=comm.user.full_name %></h5>
+    <p><%=comm.content %></p>
+    <hr>
+<% end %>

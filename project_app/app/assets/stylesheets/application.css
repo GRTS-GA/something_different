@@ -106,7 +106,7 @@ a {
 }
 
 .search-results {
-    display: none;
+/*    display: none;*/
     background-color: rgba(255,255,255,0.9);
     border: 1px solid lightgrey;
     width: 60vw;
@@ -301,6 +301,7 @@ input[type=password] {
 
 .main-events {
     display: flex;
+    flex-direction: column;
     /*    flex-direction: row-wrap;
     justify-content: space-around;*/
     align-items: center;
@@ -312,12 +313,17 @@ input[type=password] {
     background-position: center;
     background-repeat: no-repeat;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-size: cover;
     flex-direction: column;*/
 =======
     background-size: cover;*/
     flex-direction: column;
 >>>>>>> 033e62a555fafe39f1c8709ee3bef5f866cac207
+=======
+    background-size: cover;
+    flex-direction: column;*/
+>>>>>>> 7f405c37bab689d5ee2c370da92ac6bdbe313fa5
     border: 1px solid lightgrey;
     background-color: white;
     width: 50vw;
@@ -339,7 +345,7 @@ input[type=password] {
     padding: 3%;
     width: 90%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
 }
 
 .searched-img {
@@ -579,6 +585,7 @@ input[type=password]:focus {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /*.searched-events {
     border: 1px solid lightgrey;
@@ -586,22 +593,60 @@ input[type=password]:focus {
     margin: 1%;
     padding: 3%;
 }*/
+=======
+/*end event new styling*/
+>>>>>>> 7f405c37bab689d5ee2c370da92ac6bdbe313fa5
 
-/*.searchedevent {
-    display: flex;
+img {
+  height: 150px;
+  width: 150px;
 }
 
 .searchedevent img {
     height: 50%;
     width: 50%;
     border-radius: 50% 50%
-}*/
+}
 
 
+<<<<<<< HEAD
 >>>>>>> 033e62a555fafe39f1c8709ee3bef5f866cac207
 /*end event new styling*/
+=======
+/***   Tunde : for message  ***/
+>>>>>>> 7f405c37bab689d5ee2c370da92ac6bdbe313fa5
 
-img {
-  height: 150px;
-  width: 150px;
+div.flash {
+    background-color: antiquewhite;
+    display: none;
+    max-width: 500px;
+    margin: 0 auto;
 }
+
+div.notice {
+    border: 1px solid green;
+}
+
+div.alert {
+    border: 1px solid red;
+}
+
+p.flash-text {
+    text-align: center;
+    font-weight: bold;
+}
+
+p.notice {
+    color: green;
+}
+
+p.alert {
+    color: red;
+}
+
+/*Geny: temporary fix to keep it from blocking form*/
+.logo {
+  height: 45px;
+  width: 70px;
+}
+/*end event new styling*/
