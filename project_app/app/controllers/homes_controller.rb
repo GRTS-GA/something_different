@@ -55,7 +55,6 @@ def saveEvent
         state = event["_embedded"]["venues"][0]["state"]["name"]
         country = event["_embedded"]["venues"][0]["country"]["name"]
 
-
         newEvent = Event.new()
         newEvent.user_id = current_user.id
         newEvent.name = event["name"]
