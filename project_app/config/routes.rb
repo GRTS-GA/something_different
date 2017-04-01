@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
 resources :users
  resources :events
+resources :comments
 
-# match '/events/search', to: 'events#search', as: :search  
+# match '/events/search', to: 'events#search', as: :search
 get '/homes',      to: 'homes#index', as: :homes
 post '/homes',      to: 'homes#search'
 get '/homes/searchByClass',      to: 'homes#searchByClass', as: :event_class
