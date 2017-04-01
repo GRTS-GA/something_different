@@ -15,7 +15,7 @@
           <ul class="nav-menu">
 
               <% if current_user %>
-                  <li>Hello, <%= current_user.email %></li>
+                  <li class="current-user">Hello, <%= current_user.email %></li>
                   <li><%= link_to "HOME", root_path %></li>
                    <li><%=link_to "BROWSE EVENTS", events_path %></li>
                   <li><%= link_to "CREATE AN EVENT", new_event_path %></li>
@@ -42,9 +42,9 @@
       </div> -->
       <%= render "layouts/flash" %>
      <%= yield %>
-
+<!--
       <div class="footer">
-        <p>&copy; Sameny Robunde</p>
-      </div>
+        <h5>&copy; SAMENY ROBUNDE</h5>
+      </div> -->
   </body>
 </html>

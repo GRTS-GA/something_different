@@ -1,10 +1,10 @@
 
 
 
-<h1 class="search-h1">Find your something different</h1>
+<h2 class="search-heading">FIND YOUR <span class="sd-handwriting"> something different</span></h2>
 <%= form_tag({controller: "homes", action: "search"}, method: "post") do %>
 
-    <%= text_field_tag :searchTxt,nil, placeholder: "ENTER LOCATION", required: true %>
+    <%= text_field_tag :searchTxt,nil, placeholder: "EX: 10 E. 21st Street, NY, NY 10010", required: true %>
     <%= submit_tag("Search") %>
 
 <% end %>
