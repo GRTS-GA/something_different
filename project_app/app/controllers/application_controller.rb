@@ -34,7 +34,6 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation, :remember_me, :picture, :picture_cache])
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :email, :password, :password_confirmation, :remember_me, :picture, :picture_cache])
 
-    # devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email])
 
 
 
