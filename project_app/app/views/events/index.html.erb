@@ -11,7 +11,9 @@
             <div class="searched-events">
 
               <div class="searched-img">
-                  <img src=<%= ev.image_url %> alt="">
+               <!--    <img src=<%= ev.image_url %> alt=""> -->
+              <!-- <img src=<%= ev.image %> alt=""> -->
+              <%= image_tag ev.image.url if ev.image? %>
               </div>
               <div class="event-details">
                   <label>Name: </label>

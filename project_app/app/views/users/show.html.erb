@@ -1,16 +1,11 @@
 
     <div class="profile-container">
-        <div class="sidebar-profile">
-            <div class="google-maps">
-            </div>
-            <div class="drop-down-menus">
-            </div>
-        </div>
 
         <% if current_user.id == @user.id %>
         <div class="main-profile">
+        <h1 class="user-profile-heading"> USER PROFILE</h1>
+            <h2><%= @user.full_name %></h2>
             <%= image_tag(@user.picture, :alt => "rss feed") %>
-            <h3><%= @user.full_name %></h3>
             <p><%= @user.email %></p>
             <%= link_to 'Edit Profile', edit_user_registration_path%>
 
