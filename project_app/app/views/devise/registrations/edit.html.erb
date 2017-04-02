@@ -1,6 +1,6 @@
 <div class="edit-user-container">
     <div class="edit-user-form">
-        <h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <h1 class="edit-user-heading">edit <%= resource_name.to_s.humanize %></h1>
 
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= devise_error_messages! %>

@@ -1,6 +1,6 @@
 <div class="login-container">
 <div class="form-container">
-<h2>LOG IN</h2>
+<h1 class="login-heading">log in</h1>
 
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -22,7 +22,7 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Submit" %>
   </div>
 <% end %>
 

@@ -1,11 +1,16 @@
     <%= form_for(comment) do |f|%>
         <%= f.hidden_field :user_id %><br>
-
+    <div class="comment-form-subdiv">
         <%= f.label :event %><br>
         <%= f.collection_select :event_id, Event.order(:name),:id,:name, include_blank: true %>
-
+    </div>
+    <div class="comment-form-subdiv">
         <%= f.label :comment %><br>
         <%= f.text_area :content %><br>
         <br>
+    </div>
+    <div class="comment-form-subdiv">
         <%= f.submit "Submit"%>
+    </div>
     <% end %>
+
