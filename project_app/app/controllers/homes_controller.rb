@@ -45,7 +45,7 @@ end
       parsed_response["_embedded"]["events"].select  do |e|
         e["classifications"][0]["segment"]["id"] === params[:id]
       end
-      
+
       render :index
 
   end
@@ -69,7 +69,7 @@ def saveEvent
         newEvent.event_type = event["classifications"][0]["genre"]["name"]
         newEvent.category = event["classifications"][0]["segment"]["name"]
         newEvent.event_date= event["dates"]["start"]["localDate"]
-        newEvent.image_url = event["images"][1]["url"]
+        newEvent.remote_image_url = event["images"][1]["url"]
         newEvent.address = "#{address},#{postalcode},#{city},#{state},#{country}"
         newEvent.event_url = event["url"]
         if Event.where({user_id: "#{current_user.id}" , event_url:"#{event["url"]}"})
