@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-   before_action :set_event, only: [:show, :edit, :update, :destroy]
+   # before_action :set_event, only: [:show, :edit, :update, :destroy]
       def index
         @comments = Comment.all
       end
@@ -32,11 +32,11 @@ class CommentsController < ApplicationController
       end
 
         def create
-            
+
             @comment = Comment.new(comments_params)
             @comment.user_id = current_user.id
-            
-            if @comment.save 
+
+            if @comment.save
                 redirect_to event_path(@comment.event_id)
             else
                 flash[:error] = @comment.errors.full_messages
@@ -45,19 +45,19 @@ class CommentsController < ApplicationController
 
         end
 
-        def delete
+        def destroy
             @comment = Comment.find(params[:id])
-            
+
                 if @comment.destroy
                     redirect_to event_path(@comment.event_id)
                 else
                     redirect_to event_path(@comment.event_id)
                 end
-   
+
         end
 
         def comments_params
-            params.require(:comment).permit(:event_id, :content)    
+            params.require(:comment).permit(:event_id, :content)
         end
 
 end

@@ -5,45 +5,27 @@
             <h2 class="events-links"><a href="/">SEARCH AGAIN</a></h2>
             <h2 class="events-links"><a href="../events/new">CREATE AN EVENT</a></h2>
         </div>
+
         <div class="main-events">
             <h1 class="events-heading">all events</h1>
             <div class="searched-events">
-<<<<<<< HEAD
                 <div class="individual-searched-events">
+
+<!--                       show each event -->
                       <% @events.each do |ev| %>
-                      <img src=<%= ev.image_url %> alt="" /><br>
-                      <label class="searched-label">Name: </label> <%= link_to ev.name, event_path(ev) %> <br>
-                      <label class="searched-label">Date: </label> <%= ev.event_date %>
+
+                        <div class="event-details">
+                          <p><%= image_tag(ev.image, :alt => "") %></p>
+                          <label>Name: </label> <p class ="evlinks"><%= link_to ev.name,  event_path(ev) %></p>
+
+                          <label>Date: </label> <%= ev.event_date %> <br>
+
+                          <p>Created By: <%= ev.user.full_name %></p>
+                        </div>
+                        <hr>
                       <% end %>
                 </div>
-          </div>
-=======
-
-              <div class="searched-img">
-               <!--    <img src=<%= ev.image_url %> alt=""> -->
-              <!-- <img src=<%= ev.image %> alt=""> -->
-              <%= image_tag ev.image_url if ev.image? %>
-
-
-              </div>
-              <div class="event-details">
-                  <label>Name: </label>
-                  <%= link_to ev.name,  event_path(ev) %> <br>
-                  <label>Date: </label> <br>
-                  <h4><%= ev.event_date %></h4>
-                  <br>
-                  <%= render './comments/count', event: ev%>
-                        <div class="commentdiv" id="commentbox">
-                        <% @comment.event_id = ev.id %>
-                        <%= render './comments/form', comment: @comment%>
-                         </div>
-              </div>
             </div>
-            <hr>
-            <% end %>
-        </div>
->>>>>>> 7a1fd9ea1ec602f46cbd84f6fed360a25401b22e
-        </div>
-   </div>
-
+          </div>
+      </div>
 
