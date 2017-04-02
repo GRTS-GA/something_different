@@ -21,6 +21,15 @@
         <a href=<%= @event.event_url %> ><button class="events-button">Purchase Tickets</button></a>
         </div>
         <br/>
+            <%= render './comments/count', event: @event%>
+                    
+            <div class="commentdiv" id="commentbox">
+                <% @comment.event_id = @event.id %>
+                <%= render './comments/form', comment: @comment, event: @event%>
+            </div>
+            <div class="commentdiv" id="commentbox">
+                <%= render './comments/index', event: @event%>
+            </div>
     </div>
     </div>
 

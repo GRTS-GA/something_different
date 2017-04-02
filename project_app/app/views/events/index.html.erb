@@ -20,8 +20,14 @@
               <div class="event-details">
                   <label>Name: </label>
                   <%= link_to ev.name,  event_path(ev) %> <br>
-                  <label>Date: </label>
-                  <p><%= ev.event_date %></p>
+                  <label>Date: </label> <br>
+                  <h4><%= ev.event_date %></h4>
+                  <br>
+                  <%= render './comments/count', event: ev%>
+                        <div class="commentdiv" id="commentbox">
+                        <% @comment.event_id = ev.id %>
+                        <%= render './comments/form', comment: @comment%>
+                         </div>
               </div>
             </div>
             <hr>

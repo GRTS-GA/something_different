@@ -1,11 +1,12 @@
-    <%= form_for(comment) do |f|%>
-        <%= f.hidden_field :user_id %><br>
 
-        <%= f.label :event %><br>
-        <%= f.collection_select :event_id, Event.order(:name),:id,:name, include_blank: true %>
+<%= form_for (comment)  do | f |%>
+    
+        
+        <%= f.text_area :content, placeholder: "Click to add comment", class: "commentBox", require: true%><br>
+        
+        <%=f.hidden_field :event_id%>
+        
 
-        <%= f.label :comment %><br>
-        <%= f.text_area :content %><br>
-        <br>
-        <%= f.submit "Submit"%>
-    <% end %>
+       <%= f.submit "Submit", class: "submitBtn" %>
+
+<%end%>

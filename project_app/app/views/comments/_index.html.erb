@@ -1,0 +1,18 @@
+<p>
+    <% event.comments.each do | comment | %>
+        <div class="commentDetails">
+            <p>
+                <span><%=comment.content %><sapn>
+                <p>posted by <span><%= comment.user.full_name%> | <br>
+                    <% if current_user.id === comment.user_id %>
+                    <button class="comment" value=<%=comment.id%>>Edit</button>
+                   
+                        <span> 
+                            <%= link_to 'Remove Comment', comment,  method: :delete %> 
+                        </span>
+                </p></p>
+            <%end%>
+            </p>
+        </div>     
+    <%end%>
+</p> 

@@ -4,7 +4,7 @@ def index
 
 end
 
-#display select event deatils
+#display select event deatils by event id
 def show
   if params[:id]
     url="https://app.ticketmaster.com/discovery/v2/events/#{params[:id]}.json?#{apikey}"
@@ -39,17 +39,18 @@ end
 
 ###### Search Event by category
   def searchByClass
-    session[:activeEventSearch] = nil
-         @ticket_list= getApi(session[:initialUrl]).
-          parsed_response["_embedded"]["events"].each  do |e|
-            e["classifications"][0]["segment"]["name"] === params[:id]
-          end
 
+      session[:activeEventSearch] = nil
+      @ticket_list= getApi(session[:initialUrl]).
+      parsed_response["_embedded"]["events"].select  do |e|
+        e["classifications"][0]["segment"]["id"] === params[:id]
+      end
+      
       render :index
 
   end
 
-
+#########   save event details from ticket master into database
 def saveEvent
     url="https://app.ticketmaster.com/discovery/v2/events/#{session[:eventId]}.json?#{apikey}"
      event= getApi(url).parsed_response
