@@ -6,9 +6,18 @@
             <h2 class="events-links"><a href="../events/new">CREATE AN EVENT</a></h2>
         </div>
         <div class="main-events">
-            <h1> ALL EVENTS </h1>
-          <% @events.each do |ev| %>
+            <h1 class="events-heading">all events</h1>
             <div class="searched-events">
+<<<<<<< HEAD
+                <div class="individual-searched-events">
+                      <% @events.each do |ev| %>
+                      <img src=<%= ev.image_url %> alt="" /><br>
+                      <label class="searched-label">Name: </label> <%= link_to ev.name, event_path(ev) %> <br>
+                      <label class="searched-label">Date: </label> <%= ev.event_date %>
+                      <% end %>
+                </div>
+          </div>
+=======
 
               <div class="searched-img">
                <!--    <img src=<%= ev.image_url %> alt=""> -->
@@ -33,5 +42,8 @@
             <hr>
             <% end %>
         </div>
+>>>>>>> 7a1fd9ea1ec602f46cbd84f6fed360a25401b22e
         </div>
+   </div>
+
 

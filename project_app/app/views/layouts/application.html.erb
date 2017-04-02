@@ -11,9 +11,8 @@
   <body>
 
       <div class="navigation">
-          <img src="http://i.imgur.com/2aOYONY.jpg" class="logo" />
-          <ul class="nav-menu">
 
+        <ul class="nav-menu">
               <% if current_user %>
                   <li class="current-user">Hello, <%= current_user.email %></li>
                   <li><%= link_to "HOME", root_path %></li>
