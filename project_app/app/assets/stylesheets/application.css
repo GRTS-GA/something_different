@@ -56,7 +56,8 @@ body {
     /*border: 1px solid grey;*/
     margin: 0;
     top: 0;
-    text-align: center;
+    opacity: 0.7;
+    box-shadow: 0 0 20px 20px white inset;
 }
 
 
@@ -76,17 +77,17 @@ a {
 
 /*this is the div container for the landing page*/
 
-.landing {
+.landing-container {
+    display: flex;
     width: 100vw;
     height: 90vh;
-    display: flex;
-    /*    align-items: center;*/
     opacity: 0.8;
     background: url("http://i.imgur.com/JkkhGMB.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: scroll;
 }
 
 
@@ -96,14 +97,37 @@ a {
     border: 1px solid lightgrey;
     background: rgba(255, 255, 255, 0.9);
     padding: 2%;
-    /*    margin-top: 8%;
-    margin-left: 15%;*/
-    top: 40%;
+    top: 25%;
     left: 15%;
-    width: 55vw;
+    width: 60vw;
     height: 20vh;
     text-align: center;
     position: absolute;
+}
+
+.search-results {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid lightgrey;
+    width: 60vw;
+    height: 20vh;
+    text-align: center;
+    top: 60%;
+    left: 15%;
+    position: absolute;
+    padding: 3%;
+    overflow: scroll;
+}
+
+.search-results img {
+    max-height: 150px;
+    max-width: 150px;
+    border-radius: 30px;
+}
+
+.search-results li {
+    list-style-type: none;
+    line-height: 3;
 }
 
 
@@ -288,8 +312,8 @@ input[type=password] {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;*/
-    flex-direction: column;
+    background-size: cover;
+    flex-direction: column;*/
     border: 1px solid lightgrey;
     background-color: white;
     width: 50vw;
@@ -549,7 +573,7 @@ input[type=password]:focus {
     border: 3px solid #555;
 }
 
-
+<<<<<<< HEAD
 /*.searched-events {
     border: 1px solid lightgrey;
     height: 25vh;
@@ -560,16 +584,19 @@ input[type=password]:focus {
 
 /*.searchedevent {
     display: flex;
+
+/*end event new styling*/
+
+img {
+    height: 150px;
+    width: 150px;
 }
 
 .searchedevent img {
     height: 50%;
     width: 50%;
     border-radius: 50% 50%
-}*/
-
-
-/*end event new styling*/
+}
 
 
 /***   Tunde : for message  ***/
@@ -615,8 +642,3 @@ p.alert {
 
 
 /*end event new styling*/
-
-img {
-    height: 150px;
-    width: 150px;
-}

@@ -3,8 +3,8 @@
 
 <h1 class="search-h1">Find your something different</h1>
 <%= form_tag({controller: "homes", action: "search"}, method: "post") do %>
-    
-    <%= text_field_tag :searchTxt,nil, placeholder: "Enter search term", required: true %>
+
+    <%= text_field_tag :searchTxt,nil, placeholder: "ENTER LOCATION", required: true %>
     <%= submit_tag("Search") %>
 
 <% end %>
