@@ -4,7 +4,6 @@
         <%= form_for(@event, :html => {:multipart => true}) do |f|%>
 
 
-
         <%= f.hidden_field :user_id %><br>
 
         <%= f.label :name %><br>
@@ -20,10 +19,9 @@
         <%= f.text_field :event_date %><br>
         <br>
 
-      <label>link to image</label>
-      <%= image_tag(@evnt.image_url) if @user.image? %>
-      <%= f.text_field :remote_avatar_url %>
-      <br>
+      <label>link to image</label>  <br>
+      <%= image_tag(@event.image_url) if @event.image? %>  <br>
+      <%= f.text_field :remote_image_url %><br>
 
 
         <%= f.label :price %><br>

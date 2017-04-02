@@ -55,7 +55,7 @@ def destroy
 end
 
 def event_params
-      params.require(:event).permit(:user_id, :name, :event_type, :category, :event_date, :image, :event_url, :address, :price)
+      params.require(:event).permit(:user_id, :name, :event_type, :category, :event_date, :image, :image_url, :remote_image_url, :event_url, :address, :price)
   end
 end
 
