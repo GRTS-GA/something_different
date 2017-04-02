@@ -3,3 +3,5 @@ class AddIsusercreatedToEvents < ActiveRecord::Migration[5.0]
     add_column :events, :is_user_created, :boolean
   end
 end
+
+

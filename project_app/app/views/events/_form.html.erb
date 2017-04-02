@@ -5,10 +5,6 @@
 
 
 
-
-
-
-
         <%= f.hidden_field :user_id %><br>
 
         <%= f.label :name %><br>
@@ -25,12 +21,18 @@
         <br>
         <%= f.label :image %><br>
         <%= image_tag(@event.image_url) if @event.image? %>
+        <%= f.text_field :remote_image_url %>
         <%= f.file_field :image %>
         <%= f.hidden_field :image_cache %>
 
+<<<<<<< HEAD
+
+
+=======
         <%= f.label :price %><br>
         <%= f.text_field :price %><br>
    
+>>>>>>> 286b60302bd01c6fec27763a83bd2c0069c2120f
         <br>
         <%= f.label :event_url %><br>
         <%= f.text_field :event_url %><br>
