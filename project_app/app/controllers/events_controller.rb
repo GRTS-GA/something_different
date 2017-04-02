@@ -5,10 +5,12 @@ class EventsController < ApplicationController
   # before_action :set_event, only: [:show, :edit, :update, :destroy]
 def index
   @events = Event.all
+  @comment = Comment.new
 end
 
 def show
  @event = Event.find(params[:id])
+ @comment = Comment.new
 end
 
 def new
@@ -55,7 +57,7 @@ def destroy
 end
 
 def event_params
-      params.require(:event).permit(:user_id, :name, :event_type, :category, :event_date, :image_url, :event_url, :address, :price)
+      params.require(:event).permit(:user_id, :name, :event_type, :category, :event_date, :image, :image_url, :remote_image_url, :event_url, :address, :price)
   end
 end
 

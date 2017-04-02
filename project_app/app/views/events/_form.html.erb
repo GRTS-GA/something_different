@@ -1,6 +1,11 @@
 
-    <%= form_for(event) do |f|%>
+
+       <!--  #multipart added for image upload\ -->
+        <%= form_for(@event, :html => {:multipart => true}) do |f|%>
+
+
         <%= f.hidden_field :user_id %><br>
+
         <%= f.label :name %><br>
         <%= f.text_field :name %><br>
        <br>
@@ -13,11 +18,15 @@
         <%= f.label :event_date %><br>
         <%= f.text_field :event_date %><br>
         <br>
-         <%= f.label :price %><br>
+
+      <label>link to image</label>  <br>
+      <%= image_tag(@event.image_url) if @event.image? %>  <br>
+      <%= f.text_field :remote_image_url %><br>
+
+
+        <%= f.label :price %><br>
         <%= f.text_field :price %><br>
-        <br>
-        <%= f.label :image_url %><br>
-        <%= f.text_field :image_url %><br>
+
         <br>
         <%= f.label :event_url %><br>
         <%= f.text_field :event_url %><br>
@@ -27,5 +36,13 @@
         <%= f.text_field :address %><br>
         <br>
         <%= f.submit "Submit"%>
-    <% end %>
+         <%end%>
+
+
+
+
+
+
+
+
 
