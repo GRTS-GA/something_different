@@ -1,25 +1,43 @@
 
-
-
-<%= image_tag @event["images"][1]["url"] %>
-<p>Name: <h2><%=@event["name"]%> <h2></p>
-<p>Category: <%=@event["classifications"][0]["segment"]["name"]%> </p>
-<p>Type: <%=@event["classifications"][0]["genre"]["name"]%> </p>
-<p>Start Date: <%=@event["dates"]["start"]["localDate"]%> </p>
-<p>End Date: <%=@event["sales"]["public"]["endDateTime"]%> </p>
-<p>Status: <%=@event["dates"]["status"]["code"]%> </p>
-<p>Time: <%=@event["dates"]["start"]["localTime"]%> </p>
-<p>Venue: <%=@event["_embedded"]["venues"][0]["name"]%> </p>
-<p>Address: <%=@event["_embedded"]["venues"][0]["address"]["line1"]%>, 
-       <%= @event["_embedded"]["venues"][0]["postalcode"]%>,  
-        <%=@event["_embedded"]["venues"][0]["city"]["name"]%>,  
-        <%=@event["_embedded"]["venues"][0]["state"]["name"]%>, 
-         <%=@event["_embedded"]["venues"][0]["country"]["name"]%>, 
-         </p>
-
-<h2><%= link_to "See full details",  @event["url"] %>
-<% session[:eventId]=@event["id"]%>
-<%= link_to 'Save event Details', save_event_path %>
-
-
+<div class="saved-events-container">
+    <div class="saved-events-show">
+        <div class="saved-events-image">
+            <%= image_tag @event["images"][1]["url"] %>
+        </div>
+        <div class="saved-events-info">
+            <h3>Name:</h3><p> <%=@event["name"]%></p>
+        </div>
+        <div class="saved-events-info">
+            <h3>Category:</h3><p> <%=@event["classifications"][0]["segment"]["name"]%></p>
+        </div>
+        <div class="saved-events-info">
+            <h3>Type:</h3><p> <%=@event["classifications"][0]["genre"]["name"]%></p>
+        </div>
+        <div class="saved-events-info">
+            <h3>Start Date:</h3><p> <%=@event["dates"]["start"]["localDate"]%></p>
+        </div>
+        <div class="saved-events-info">
+            <h3>End Date:</h3><p> <%=@event["sales"]["public"]["endDateTime"]%></p>
+        </div>
+        <div class="saved-events-info">
+            <h3>Status:</h3><p> <%=@event["dates"]["status"]["code"]%></p>
+        </div>
+        <div class="saved-events-info">
+            <h3>Time:</h3><p> <%=@event["dates"]["start"]["localTime"]%></p>
+        </div>
+        <div class="saved-events-info">
+            <h3>Venue:</h3><p> <%=@event["_embedded"]["venues"][0]["name"]%></p>
+        </div>
+        <div class="saved-events-info">
+            <h3>Address:</h3><p> <%=@event["_embedded"]["venues"][0]["address"]["line1"]%>
+                <%=@event["_embedded"]["venues"][0]["postalcode"]%>,
+                <%=@event["_embedded"]["venues"][0]["city"]["name"]%>,
+                <%=@event["_embedded"]["venues"][0]["state"]["name"]%>,
+                <%=@event["_embedded"]["venues"][0]["country"]["name"]%></p>
+        <div class="saved-events-info">
+            <h4><%= link_to "See Details",  @event["url"] %> |
+            <% session[:eventId]=@event["id"]%>
+            <%= link_to 'Save Event', save_event_path %></h4>
+    </div>
+</div>
 

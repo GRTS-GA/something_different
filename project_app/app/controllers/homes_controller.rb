@@ -62,6 +62,7 @@ def saveEvent
         state = event["_embedded"]["venues"][0]["state"]["name"]
         country = event["_embedded"]["venues"][0]["country"]["name"]
 
+
         newEvent = Event.new()
         newEvent.user_id = current_user.id
         newEvent.name = event["name"]
@@ -82,7 +83,7 @@ def saveEvent
               redirect_to event_details_path(session[:eventId])
           end
         end
-      
+
     else
       redirect_to new_user_session_path
     end
