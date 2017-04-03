@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby "2.2.3"
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -32,7 +32,7 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 3.8.0'
 gem 'fog', '~> 1.26.0'
 gem 'net-ssh'
-
+gem 'carrierwave-data-uri'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

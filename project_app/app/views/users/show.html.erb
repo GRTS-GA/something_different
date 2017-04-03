@@ -1,21 +1,17 @@
 
     <div class="profile-container">
-        <div class="sidebar-profile">
-            <div class="google-maps">
-            </div>
-            <div class="drop-down-menus">
-            </div>
-        </div>
 
         <% if current_user.id == @user.id %>
         <div class="main-profile">
-            <%= image_tag(@user.picture, :alt => "rss feed") %>
-            <h3><%= @user.full_name %></h3>
-            <p><%= @user.email %></p>
-            <%= link_to 'Edit Profile', edit_user_registration_path%>
-
-            <h3> My Events </h3>
-            <div class="my-events">
+        <h1 class="user-profile-heading"> user profile</h1>
+                <div class="profile-subdiv">
+                    <h2><%= @user.full_name %></h2>
+                    <p><%= image_tag(@user.picture, :alt => "rss feed") %></p>
+                    <p><%= @user.email %></p>
+                    <%= link_to 'Edit Profile', edit_user_registration_path%>
+                </div>
+            <h1 class="user-profile-heading"> my events</h1>
+                <div class="profile-subdiv">
                 <% @user.events.each do |ev| %>
                     <img src=<%=ev.image_url %> alt=""><br>
                     <%=link_to ev.name, event_path(ev) %><br>
@@ -24,7 +20,7 @@
                     <%= link_to "Delete", ev, method: :delete, data: { confirm: "Are you sure?"} %><br>
                     <hr>
                 <% end %>
-            </div>
+                </div>
         </div>
 
         <% else %>

@@ -14,8 +14,9 @@
  *= require_self
  */
 
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Kristi');
 * {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 body {
@@ -30,9 +31,8 @@ body {
     width: 100vw;
     height: 7vh;
     top: 0;
-    border: 1px solid grey;
+    background: lightgrey;
     margin: 0;
-    /*   position: fixed;*/
 }
 
 .nav-menu {
@@ -46,18 +46,15 @@ body {
 
 .nav-menu li {
     list-style-type: none;
-    border: 1px solid lightgrey;
-    padding: 10px;
+    /*    border: 1px solid lightgrey;
+    background-color: rgba(255, 255, 255, 0.7);*/
+    padding: 20px;
     margin: 0;
     top: 0;
 }
 
-.logo {
-    /*border: 1px solid grey;*/
-    margin: 0;
-    top: 0;
-    opacity: 0.7;
-    box-shadow: 0 0 20px 20px white inset;
+.current-user {
+    color: slategrey;
 }
 
 
@@ -87,42 +84,50 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: scroll;
+    /*    overflow: scroll;*/
 }
 
 
 /*search div holds the form page within the landing div*/
 
 .search {
-    border: 1px solid lightgrey;
-    background: rgba(255, 255, 255, 0.9);
+    /*    display: flex;*/
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 2%;
     top: 25%;
     left: 15%;
-    width: 60vw;
-    height: 20vh;
-    text-align: center;
+    width: 60%;
+    height: 40%;
+    /*    text-align: left;*/
+    padding: 3%;
     position: absolute;
+    overflow: scroll;
+}
+
+.sd-handwriting {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+}
+
+.search-heading {
+    word-spacing: 1em;
 }
 
 .search-results {
-/*    display: none;*/
-    background-color: rgba(255,255,255,0.9);
-    border: 1px solid lightgrey;
-    width: 60vw;
-    height: 20vh;
     text-align: center;
-    top: 60%;
-    left: 15%;
-    position: absolute;
     padding: 3%;
-    overflow: scroll;
 }
 
 .search-results img {
     max-height: 150px;
     max-width: 150px;
     border-radius: 30px;
+    padding: 2%;
 }
 
 .search-results li {
@@ -130,11 +135,18 @@ a {
     line-height: 3;
 }
 
+.category-links {
+    font-style: bold;
+    font-size: 40px;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+}
+
 /*landing page form*/
 
 input[type=text] {
-    width: 20%;
-    padding: 2%;
+    width: 50%;
+    padding: 3%;
+    font-size: 15px;
 }
 
 input[type=text]:focus {
@@ -142,8 +154,7 @@ input[type=text]:focus {
 }
 
 input[type=submit] {
-    width: 20%;
-    padding: 2%;
+    width: 15%;
     border: none;
 }
 
@@ -154,10 +165,14 @@ input[type=submit] {
 /*log in page form*/
 
 input[name="commit"] {
-    width: 30%;
+    width: 35%;
     padding: 3%;
     border: none;
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.7);
+    text-shadow: 0 5px 5px rgba(38, 38, 38, 0.7);
     margin: 3%;
+    background-color: rebeccapurple;
+    font-size: 2em;
 }
 
 input[type=email],
@@ -181,6 +196,7 @@ input[type=password] {
     width: 55%;
     padding: 3%;
     border: 1px solid lightgrey;
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
     margin: 3%;
 }
 
@@ -199,28 +215,14 @@ input[type=password] {
 
 .profile-container {
     display: flex;
-    flex-direction: row-wrap;
-    justify-content: space-around;
     align-items: center;
     opacity: 0.8;
-    background: url("http://i.imgur.com/JkkhGMB.jpg");
+    height: 95vh;
+    background: url("http://i.imgur.com/RT9uFHA.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-
-/*sidebar containing map and advanced search*/
-
-.sidebar-profile {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid lightgrey;
-    background-color: white;
-    width: 20vw;
-    height: 70vh;
-    margin-top: 3%;
 }
 
 
@@ -229,38 +231,27 @@ input[type=password] {
 .main-profile {
     display: flex;
     flex-direction: column;
-    border: 1px solid lightgrey;
-    background-color: white;
-    width: 40vw;
-    height: 70vh;
-    padding: 4%;
-    margin-top: 3%;
-    margin-left: 5%;
-}
-
-.profile-pic {
-    max-width: 200px;
-    max-height: 200px;
-}
-
-.profile-info {
-    line-height: 3;
-    font-weight: 700;
-}
-
-.google-maps,
-.drop-down-menus {
-    border: 1px solid lightgrey;
-    height: 40vh;
-    margin: 1%;
-}
-
-.my-events {
-    border: 1px solid lightgrey;
-    height: 50vh;
-    margin: 1%;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 35%;
+    height: 70%;
+    padding: 3%;
+    position: absolute;
+    top: 12%;
+    left: 6%;
     overflow: scroll;
-    padding: 1%;
+}
+
+.user-profile-heading {
+    font-family: 'Kristi', cursive;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    color: rebeccapurple;
+    font-size: 50px;
+}
+
+.profile-subdiv {
+    padding: 10%;
 }
 
 
@@ -272,10 +263,11 @@ input[type=password] {
 .events-container {
     display: flex;
     flex-direction: row-wrap;
-    justify-content: space-around;
+    justify-content: center;
+    height: 95vh;
     align-items: flex-start;
     opacity: 0.8;
-    background: url("http://i.imgur.com/JkkhGMB.jpg");
+    background: url("http://i.imgur.com/T62L3GU.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -288,12 +280,14 @@ input[type=password] {
 .sidebar-events {
     display: flex;
     flex-direction: column;
-    border: 1px solid lightgrey;
-    background-color: white;
-    width: 20vw;
-    height: 25vh;
-    margin-top: 3%;
-    padding: 1%;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 20%;
+    height: 25%;
+    margin-right: 3%;
+    margin-top: 5%;
+    padding: 2%;
 }
 
 
@@ -302,25 +296,29 @@ input[type=password] {
 .main-events {
     display: flex;
     flex-direction: column;
-    /*    flex-direction: row-wrap;
-    justify-content: space-around;*/
-    align-items: center;
-    /*margin-top: 4%;*/
     opacity: 0.8;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
     height: 90vh;
-/*    background: url("sports-background.jpeg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
-    flex-direction: column;*/
+    flex-direction: column;
     border: 1px solid lightgrey;
-    background-color: white;
-    width: 50vw;
-    height: 70vh;
-    padding: 4%;
-    margin-top: 3%;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 45%;
+    height: 70%;
+    padding: 2%;
+    margin-top: 5%;
     overflow: scroll;
+}
+
+.events-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+    letter-spacing: 7px;
 }
 
 .events-links {
@@ -329,18 +327,24 @@ input[type=password] {
 }
 
 .searched-events {
-    border: 1px solid lightgrey;
-    height: 50%;
-    margin: 1%;
-    padding: 3%;
-    width: 90%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    padding: 3%;
+}
+
+.individual-searched-events {
+    margin: 4%;
+    padding: 4%;
+}
+
+.searched-label {
+    font-size: 20px;
+    padding: 3%;
 }
 
 .searched-img {
-  width: 100px;
-  height: 100px;
+    max-width: 100px;
+    max-height: 100px;
 }
 
 
@@ -354,8 +358,6 @@ input[type=password] {
 
 .login-container {
     display: flex;
-    /*    flex-direction: row-wrap;
-    justify-content: space-around;*/
     align-items: center;
     opacity: 0.8;
     height: 90vh;
@@ -372,23 +374,38 @@ input[type=password] {
 .form-container {
     width: 25vw;
     height: 55vh;
-    border: 1px solid lightgrey;
-    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 5%;
     /*    margin: 15%;*/
     top: 15%;
     left: 15%;
     position: absolute;
+    overflow: scroll;
 }
 
 
 /*log in page form*/
 
-input[name="commit"] {
-    width: 30%;
+
+.login-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+}
+
+label[for=user_full_name],
+label[for=user_picture],
+label[for=user_email],
+label[for=user_password],
+label[for=user_password_confirmation] {
     padding: 3%;
-    border: none;
     margin: 3%;
+    line-height: 3;
 }
 
 input[type=email],
@@ -434,15 +451,25 @@ input[type=password]:focus {
 .signup-form-container {
     width: 25vw;
     height: 55vh;
-    border: 1px solid lightgrey;
-    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 5%;
     /*    margin-left: 45%;*/
     top: 15%;
     left: 45%;
     position: absolute;
+    overflow: scroll;
 }
 
+.signup-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+}
 
 /*sign up page form*/
 
@@ -453,6 +480,7 @@ input[type=password]:focus {
     width: 55%;
     padding: 3%;
     border: 1px solid lightgrey;
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
     margin: 3%;
 }
 
@@ -476,7 +504,7 @@ input[type=password]:focus {
     display: flex;
     align-items: center;
     opacity: 0.8;
-    height: 90vh;
+    height: 95vh;
     background: url("http://i.imgur.com/xCMuDCr.jpg");
     background-attachment: fixed;
     background-position: center;
@@ -490,21 +518,25 @@ input[type=password]:focus {
 .events-show {
     display: flex;
     flex-direction: column;
-    border: 1px solid lightgrey;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
     background-color: rgba(255, 255, 255, 0.7);
-    width: 30vw;
-    height: 60vh;
+    width: 40%;
+    height: 70%;
     padding: 3%;
     position: absolute;
-    top: 20%;
-    left: 15%;
+    top: 10%;
+    left: 7%;
+    overflow: scroll;
 }
 
-.google-maps,
-.drop-down-menus {
-    border: 1px solid lightgrey;
-    height: 40vh;
-    margin: 1%;
+.event-name-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
 }
 
 .events-label h3,
@@ -517,11 +549,20 @@ input[type=password]:focus {
 }
 
 .events-image {
-    max-width: 150px;
-    max-height: 150px;
-    padding-left: 30px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
+.events-button {
+    width: 35%;
+    padding: 3%;
+    border: none;
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.7);
+    text-shadow: 0 5px 5px rgba(38, 38, 38, 0.7);
+    margin: 3%;
+    background-color: rebeccapurple;
+    font-size: 1em;
+}
 
 /*end events show page styling*/
 
@@ -544,22 +585,33 @@ input[type=password]:focus {
 }
 
 .event-form-container {
-    width: 30vw;
-    height: 75vh;
-    border: 1px solid lightgrey;
+    width: 40%;
+    height: 60%;
     margin: 1%;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 3%;
+    padding: 5%;
     top: 10%;
     left: 45%;
     position: absolute;
+    overflow: scroll;
 }
 
+.create-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+}
 
 #event_name,
 #event_type,
 #event_category,
 #event_event_date,
+#event_price,
 #event_image_url,
 #event_event_url {
     width: 50%;
@@ -574,31 +626,37 @@ input[type=password]:focus {
     border: 3px solid #555;
 }
 
+
+
 /*end event new styling*/
 
 img {
-  height: 150px;
-  width: 150px;
+    max-height: 200px;
+    max-width: 200px;
+    border-radius: 20px;
 }
 
 .searchedevent img {
-    height: 50%;
-    width: 50%;
-    border-radius: 50% 50%
+    max-height: 200px;
+    max-width: 200px;
+    border-radius: 20px;
 }
+
+
+/*end event new styling*/
 
 
 /***   Tunde : for message  ***/
 
 div.flash {
-    background-color: antiquewhite;
+    background-color: white;
     display: none;
-    max-width: 500px;
+    max-width: 300px;
     margin: 0 auto;
 }
 
 div.notice {
-    border: 1px solid green;
+    border: 1px solid rebeccapurple;
 }
 
 div.alert {
@@ -611,16 +669,289 @@ p.flash-text {
 }
 
 p.notice {
-    color: green;
+    color: rebeccapurple;
 }
 
 p.alert {
     color: red;
 }
 
-/*Geny: temporary fix to keep it from blocking form*/
-.logo {
-  height: 45px;
-  width: 70px;
+
+/*****  Tunde Comment styling **********************/
+
+.modal {
+    z-index: 1;
+    opacity: 0.9;
+    width: 80%;
+    height: 80%;
+    display: none;
 }
-/*end event new styling*/
+
+
+/*begin homes show styling*/
+
+.saved-events-container {
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    height: 95vh;
+    background: url("http://i.imgur.com/bvsbrye.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*this div holds all the homes show info*/
+
+.saved-events-show {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 40%;
+    height: 80%;
+    padding: 3%;
+    position: absolute;
+    top: 9%;
+    left: 10%;
+    overflow: scroll;
+}
+
+.saved-events-info h3,
+.saved-events-info p {
+    display: inline;
+}
+
+.saved-events-info {
+    padding: 3%;
+}
+
+
+/*end homes show styling*/
+
+/*begin events edit form styling*/
+
+.edit-event-container {
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    height: 90vh;
+    background: url("http://i.imgur.com/T62L3GU.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.edit-event-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 40%;
+    height: 70%;
+    padding: 3%;
+    position: absolute;
+    top: 9%;
+    left: 7%;
+    overflow: scroll;
+}
+
+.edit-event-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+}
+
+/*end events edit form styling*/
+
+/*begin user edit styling*/
+
+.edit-user-container {
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    height: 95vh;
+    background: url("http://i.imgur.com/RT9uFHA.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*this div holds all the edit user form info*/
+
+.edit-user-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 35%;
+    height: 80%;
+    padding: 3%;
+    position: absolute;
+    top: 9%;
+    left: 7%;
+    overflow: scroll;
+}
+
+.edit-user-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+}
+/*end user edit styling*/
+
+
+/*begin new comments styling */
+
+.new-comment-container {
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    height: 95vh;
+    background: url("http://i.imgur.com/HNjMNTk.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*this div holds the new comments form*/
+
+.new-comment-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 40%;
+    height: 55%;
+    padding: 3%;
+    position: absolute;
+    top: 9%;
+    left: 10%;
+    overflow: scroll;
+}
+
+.comment-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+}
+
+label[for=comment_event],
+label[for=comment_comment] {
+    line-height: 4;
+    font-size: 20px;
+}
+
+#comment_event_id {
+    padding: 5%;
+}
+
+
+/*end new commments styling*/
+
+
+/*begin edit comments styling*/
+
+.edit-comment-container {
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    height: 95vh;
+    background: url("http://i.imgur.com/HNjMNTk.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*this div holds the new comments form*/
+
+.edit-comment-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 40%;
+    height: 55%;
+    padding: 3%;
+    position: absolute;
+    top: 9%;
+    left: 10%;
+    overflow: scroll;
+}
+
+.comment-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+}
+
+/* GC minimizing comment pic */
+
+.commpic {
+  max-height: 40px;
+  max-width: 40px;
+}
+
+/* GC minimizing comment timestamp */
+
+.commtime {
+  font-size: 10pt;
+  font-style: italic;
+  color: darkslategrey;
+  margin: 0px;
+  display: inline;
+}
+
+/* GC Indent comment */
+
+/* Style Event Details */
+
+.event-details {
+  background-color: rgba(125, 125, 125, .75);
+  padding: 5%;
+}
+
+.editevlinks a {
+  display: inline;
+  margin-left: 2%;
+  color: indigo;
+}
+
+textarea {
+  width: 95%;
+  height: 100px;
+}
+
+.evlinks a {
+  display: inline;
+  color: indigo;
+}
+
+/*end edit comment styling*/

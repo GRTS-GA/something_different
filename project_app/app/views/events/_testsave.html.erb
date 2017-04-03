@@ -1,0 +1,46 @@
+
+<div class="saveevent-container">
+<div class="saveevent-form-container">
+<h1 class="saveevent-heading">Save Event</h1>
+
+<h2>Save Event</h2>
+
+       <!--  #multipart added for image upload\ -->
+        <%= form_for(@event, :html => {:multipart => true}) do |f|%>
+
+
+        <%= f.hidden_field :user_id %><br>
+
+        <%= f.label :name %><br>
+        <%= f.text_field :name %><br>
+       <br>
+        <%= f.label :type %><br>
+        <%= f.text_field :event_type %><br>
+        <br>
+        <%= f.label :category %><br>
+        <%= f.text_field :category %><br>
+        <br>
+        <%= f.label :event_date %><br>
+        <%= f.text_field :event_date %><br>
+        <br>
+
+      <label>link to image</label>  <br>
+      <%= image_tag(@event.image_url) if @event.image? %>  <br>
+      <%= f.text_field :remote_image_url %><br>
+
+
+        <%= f.label :price %><br>
+        <%= f.text_field :price %><br>
+
+        <br>
+        <%= f.label :event_url %><br>
+        <%= f.text_field :event_url %><br>
+        <br>
+
+        <%= f.label :address %><br>
+        <%= f.text_field :address %><br>
+        <br>
+        <%= f.submit "Submit"%>
+         <% end %>
+
+

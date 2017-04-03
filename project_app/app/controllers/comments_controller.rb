@@ -1,54 +1,63 @@
 class CommentsController < ApplicationController
-  # before_action :set_event, only: [:show, :edit, :update, :destroy]
-def index
-  @comments = Comment.all
-end
 
-def show
- @comment = Comment.find(params[:id])
-end
+   # before_action :set_event, only: [:show, :edit, :update, :destroy]
+      def index
+        @comments = Comment.all
+      end
+
+      def show
+      @comment = Comment.find(params[:id])
+      end
 
 
-def new
- @comment = Comment.new()
-end
+      def new
+      # @comment = Comment.create(comment_param)
+      end
 
-def create
- @comment = Comment.new(comment_params)
-  @comment.user_id = current_user.id
+      def edit
+           @comment = Comment.find(params[:id])
+      end
 
-  if @comment.save
-    redirect_to @comment.event
-  else
-    render :new
-  end
-end
+      def update
+          @comment = Comment.find(params[:id])
 
-def edit
-    @comment = Comment.find(params[:id])
-    render :edit
-end
+          if @comment.update(comments_params)
+              redirect_to event_path(@comment.event_id)
+          else
+              flash[:error] = @comment.errors.full_messages
+              flash[:error] = @comment.errors.full_messages
+              redirect_to :edit
+          end
 
-def update
- @comment = Comment.find(params[:id])
- @comment.user_id = current_user.id
+      end
 
- if @comment.update(comment_params)
-  redirect_to @comment.event
-else
-  render :edit
-end
-end
+        def create
 
-def destroy
-    @comment = Comment.find(params[:id])
-    @comment.destroy
-    redirect_to event_path(@comment.event)
-end
+            @comment = Comment.new(comments_params)
+            @comment.user_id = current_user.id
 
-def comment_params
-      params.require(:comment).permit(:user_id, :event_id, :content)
-  end
+            if @comment.save
+                redirect_to event_path(@comment.event_id)
+            else
+                flash[:error] = @comment.errors.full_messages
+                redirect_to event_path(@comment.event_id)
+            end
 
+        end
+
+        def destroy
+            @comment = Comment.find(params[:id])
+
+                if @comment.destroy
+                    redirect_to event_path(@comment.event_id)
+                else
+                    redirect_to event_path(@comment.event_id)
+                end
+
+        end
+
+        def comments_params
+            params.require(:comment).permit(:event_id, :content)
+        end
 
 end

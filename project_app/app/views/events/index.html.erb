@@ -5,23 +5,27 @@
             <h2 class="events-links"><a href="/">SEARCH AGAIN</a></h2>
             <h2 class="events-links"><a href="../events/new">CREATE AN EVENT</a></h2>
         </div>
-        <div class="main-events">
-            <h1> ALL EVENTS </h1>
-          <% @events.each do |ev| %>
-            <div class="searched-events">
 
-              <div class="searched-img">
-                  <img src=<%= ev.image_url %> alt="">
-              </div>
-              <div class="event-details">
-                  <label>Name: </label>
-                  <%= link_to ev.name,  event_path(ev) %> <br>
-                  <label>Date: </label>
-                  <p><%= ev.event_date %></p>
-              </div>
+        <div class="main-events">
+            <h1 class="events-heading">all events</h1>
+            <div class="searched-events">
+                <div class="individual-searched-events">
+
+<!--                       show each event -->
+                      <% @events.each do |ev| %>
+
+                        <div class="event-details">
+                          <p><%= image_tag(ev.image, :alt => "") %></p>
+                          <label>Name: </label> <p class ="evlinks"><%= link_to ev.name,  event_path(ev) %></p>
+
+                          <label>Date: </label> <%= ev.event_date.strftime("%b %d %I:%M") %> <br>
+
+                          <p>Created By: <%= ev.user.full_name %></p>
+                        </div>
+                        <hr>
+                      <% end %>
+                </div>
             </div>
-            <hr>
-            <% end %>
-        </div>
-        </div>
+          </div>
+      </div>
 

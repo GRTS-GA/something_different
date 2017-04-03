@@ -4,7 +4,7 @@ def index
 
 end
 
-#display select event deatils
+#display select event deatils by event id
 def show
   if params[:id]
     url="https://app.ticketmaster.com/discovery/v2/events/#{params[:id]}.json?#{apikey}"
@@ -39,27 +39,30 @@ end
 
 ###### Search Event by category
   def searchByClass
-    session[:activeEventSearch] = nil
-         @ticket_list= getApi(session[:initialUrl]).
-          parsed_response["_embedded"]["events"].each  do |e|
-            e["classifications"][0]["segment"]["name"] === params[:id]
-          end
+
+      session[:activeEventSearch] = nil
+      @ticket_list= getApi(session[:initialUrl]).
+      parsed_response["_embedded"]["events"].select  do |e|
+        e["classifications"][0]["segment"]["id"] === params[:id]
+      end
 
       render :index
 
   end
 
-
+#########   save event details from ticket master into database
 def saveEvent
     url="https://app.ticketmaster.com/discovery/v2/events/#{session[:eventId]}.json?#{apikey}"
      event= getApi(url).parsed_response
      session[:activeEventSearch]= session[:eventId]
     if current_user
+      
         address = event["_embedded"]["venues"][0]["address"]["line1"]
         postalcode = event["_embedded"]["venues"][0]["postalcode"]
         city = event["_embedded"]["venues"][0]["city"]["name"]
         state = event["_embedded"]["venues"][0]["state"]["name"]
         country = event["_embedded"]["venues"][0]["country"]["name"]
+
 
         newEvent = Event.new()
         newEvent.user_id = current_user.id
@@ -67,21 +70,26 @@ def saveEvent
         newEvent.event_type = event["classifications"][0]["genre"]["name"]
         newEvent.category = event["classifications"][0]["segment"]["name"]
         newEvent.event_date= event["dates"]["start"]["localDate"]
-        newEvent.image_url = event["images"][1]["url"]
+        newEvent.remote_image_url = event["images"][1]["url"]
         newEvent.address = "#{address},#{postalcode},#{city},#{state},#{country}"
         newEvent.event_url = event["url"]
-        if Event.where({user_id: "#{current_user.id}" , event_url:"#{event["url"]}"})
+
+        if Event.where({user_id: current_user.id,event_url:"#{event["url"]}"}).count > 0
+          byebug
             flash[:notice] = "This event is saved already!"
            redirect_to event_details_path(session[:eventId])
         else
+           
             if newEvent.save
+              
               flash[:notice] = "This event is saved successfully!"
               redirect_to event_details_path(session[:eventId])
           else
+             
               redirect_to event_details_path(session[:eventId])
           end
         end
-      
+
     else
       redirect_to new_user_session_path
     end

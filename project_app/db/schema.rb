@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 20170331201339) do
     t.string   "event_type"
     t.string   "category"
     t.datetime "event_date"
-    t.string   "image_url"
+    t.string   "image"
     t.string   "event_url"
-    t.float    "price"
+    t.integer  "price"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "address"

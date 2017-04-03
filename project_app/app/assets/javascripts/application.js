@@ -27,4 +27,16 @@ $(document).ready(function() {
     $('div.flash.notice').delay(500).slideDown('normal', function() {
         $(this).delay(2500).slideUp();
     });
+
+
+    $(".comment").click(function(e) {
+        getCommentModal(e.target.value)
+    })
+
+    var getCommentModal = function(id) {
+        console.log(id);
+    }
+
+
+
 });
