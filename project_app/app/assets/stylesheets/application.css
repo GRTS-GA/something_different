@@ -729,7 +729,14 @@ p.alert {
     padding: 3%;
 }
 
-
+.saved-events-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+}
 /*end homes show styling*/
 
 /*begin events edit form styling*/
