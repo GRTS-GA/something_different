@@ -29,11 +29,11 @@ $(document).ready(function() {
     });
 
 
-    $(".comment").click((e) => {
+    $(".comment").click(function(e) {
         getCommentModal(e.target.value)
     })
 
-    let getCommentModal = (id) => {
+    var getCommentModal = function(id) {
         console.log(id);
     }
 

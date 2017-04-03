@@ -18,7 +18,7 @@
                           <p><%= image_tag(ev.image, :alt => "") %></p>
                           <label>Name: </label> <p class ="evlinks"><%= link_to ev.name,  event_path(ev) %></p>
 
-                          <label>Date: </label> <%= ev.event_date %> <br>
+                          <label>Date: </label> <%= ev.event_date.strftime("%b %d %I:%M") %> <br>
 
                           <p>Created By: <%= ev.user.full_name %></p>
                         </div>

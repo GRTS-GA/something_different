@@ -218,7 +218,7 @@ input[type=password] {
     align-items: center;
     opacity: 0.8;
     height: 95vh;
-    background: url("road-background.jpeg");
+    background: url("http://i.imgur.com/RT9uFHA.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -267,7 +267,7 @@ input[type=password] {
     height: 95vh;
     align-items: flex-start;
     opacity: 0.8;
-    background: url("basketball_background.jpeg");
+    background: url("http://i.imgur.com/T62L3GU.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -695,7 +695,7 @@ p.alert {
     align-items: center;
     opacity: 0.8;
     height: 95vh;
-    background: url("museum_background.jpg");
+    background: url("http://i.imgur.com/bvsbrye.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -739,7 +739,7 @@ p.alert {
     align-items: center;
     opacity: 0.8;
     height: 90vh;
-    background: url("basketball_background.jpeg");
+    background: url("http://i.imgur.com/T62L3GU.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -780,7 +780,7 @@ p.alert {
     align-items: center;
     opacity: 0.8;
     height: 95vh;
-    background: url("road-background.jpeg");
+    background: url("http://i.imgur.com/RT9uFHA.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -823,7 +823,7 @@ p.alert {
     align-items: center;
     opacity: 0.8;
     height: 95vh;
-    background: url("city_background.jpg");
+    background: url("http://i.imgur.com/HNjMNTk.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -878,7 +878,7 @@ label[for=comment_comment] {
     align-items: center;
     opacity: 0.8;
     height: 95vh;
-    background: url("city_background.jpg");
+    background: url("http://i.imgur.com/HNjMNTk.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
