@@ -24,39 +24,65 @@ Ticketmaster API
 Devise - User Authentication
 PG
 Carrierwave - Image upload
-
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-Give the example
-And repeat
-
-until finished
-End with an example of getting some data out of the system or using it for a little demo
-
-Running the tests
-
+ImageMagick
 
 Deployment
+This app was deployed on Heroku
 
-Add additional notes about how to deploy this on a live system
+Unsolved Challenges
+Improving User Experience
 
-Built With
+
+Site Navigation
+Navigation Bar
+When a user arrives on the landing page, there is a navigation bar that has links to Home, Log-In and Sign-Up.
+When a user is logged in, they also have a welcome message, and links to Search Events, Create Events, View Profile and Log-Out.
+
+Landing Page
+User arrives on landing page with a search field to enter their address.
+Once user clicks search, the categories for the results appear below the search bar.
+User can click a category and the available events appear below.
+User can click the event and is redirected to the event's show page.
+
+Result Page 
+User sees additional details for the event.
+User has a 'See Details' link that redirects to the Ticketmaster page for the event.
+User has a "Save Event' link that will check if user is logged-in.
+If user is logged-in, the event saves to their profile.
+If the user is not logged in, they are redirected to the Log-In page.
+
+Log-In
+User can enter their email-address and password. Once logged in, they are redirected to the previous page.
+If user does not have an account, they can click 'Sign-Up' to re-direct to the Sign-Up page.
+
+Sign-Up
+User can enter their name, email, password and upload a photo. Once logged in, they can see their profile.
+
+Profile
+User can view their details.
+User can edit profile and image.
+User can view the event saved to their profile. If they click an event they are taken to the Event's show page.
+
+Event Page
+User can see the event's details (created by, date, address, price).
+If the event belongs to the user, they can edit or delete the event.
+User can see and create comments, they can also edit or delete comments that belong to them.
+
+Browse Events
+User can see events saved by all users. If they click on the event , they are re-directed to the event show page, where they can leave a comment.
 
 
 Authors
 
-Tunde Shoneye - Initial work - PurpleBooth
-See also the list of contributors who participated in this project.
+Tunde Shoneye - API Calls, Programming, Initial Setup
+Samantha Garaicoa - CSS, Wireframes, UX
+Robert Romulus - Initial Concept, Image Upload, Gem Wizard
+Geny Cabral - Git Tsar, Troubleshooting, Project Manager
 
-License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details
 
 Acknowledgments
+Eventbrite
+Stack Overflow
 
-Hat tip to anyone who's code was used
-Inspiration
+WDI Turtle All-Stars (Jared, Matt, Tims, Trevor, Taka)
 
