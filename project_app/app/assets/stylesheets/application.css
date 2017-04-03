@@ -955,3 +955,64 @@ textarea {
 }
 
 /*end edit comment styling*/
+
+/*begin change password page styling*/
+
+.change-password-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+}
+/*end change password page styling*/
+
+/*begin forgot password page styling*/
+
+.forgot-password-container {
+    display: flex;
+    align-items: center;
+    opacity: 0.8;
+    height: 95vh;
+    background: url("http://i.imgur.com/HNjMNTk.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*this div holds the forgot password form*/
+
+.forgot-password-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 5px rgba(38, 38, 38, 0.8);
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 40%;
+    height: 50%;
+    padding: 3%;
+    position: absolute;
+    top: 11%;
+    left: 10%;
+    overflow: scroll;
+}
+
+.forgot-password-heading {
+    font-family: 'Kristi', cursive;
+    font-size: 60px;
+    color: rebeccapurple;
+    text-shadow: 0 3px 3px rgba(38, 38, 38, 0.8);
+    font-style: italic;
+    margin: 0;
+}
+
+.actions input[type="submit"] {
+    width: 100%;
+}
+/*end forgot password page styling*/
+
+
+
