@@ -1,31 +1,11 @@
-<<<<<<< HEAD
-    <%= form_for(comment) do |f|%>
-        <%= f.hidden_field :user_id %><br>
-    <div class="comment-form-subdiv">
-        <%= f.label :event %><br>
-        <%= f.collection_select :event_id, Event.order(:name),:id,:name, include_blank: true %>
-    </div>
-    <div class="comment-form-subdiv">
-        <%= f.label :comment %><br>
-        <%= f.text_area :content %><br>
-        <br>
-    </div>
-    <div class="comment-form-subdiv">
-        <%= f.submit "Submit"%>
-    </div>
-    <% end %>
-
-=======
 
 <%= form_for (comment)  do | f |%>
-    
-        
-        <%= f.text_area :content, placeholder: "Click to add comment", class: "commentBox", require: true%><br>
-        
         <%=f.hidden_field :event_id%>
-        
 
-       <%= f.submit "Submit", class: "submitBtn" %>
+        <%= f.text_area :content, placeholder: "Click to add comment", class: "commentBox", require: true%>
+        <br>
 
-<%end%>
->>>>>>> 7a1fd9ea1ec602f46cbd84f6fed360a25401b22e
+        <%= f.submit "Submit" %>
+
+<% end %>
+

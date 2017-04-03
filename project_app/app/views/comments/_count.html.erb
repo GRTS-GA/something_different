@@ -1,5 +1,6 @@
- <div class="postinfo">Posted by (<%= User.find(event.user_id).full_name %>) |<%=link_to "Comments (#{event.comments.count})" ,'#'%> |  
+ <div class="postinfo">
+                        <%=link_to "Comments (#{event.comments.count})" , "#" %> |
                         <% if current_user.id === event.user_id %>
-                            <%=link_to 'Remove',event, method: :delete %> 
-                        <%end%> 
-                    </div>
+                            <%=link_to 'Remove',event, method: :delete %>
+                        <% end %>
+</div>

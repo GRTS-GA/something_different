@@ -4,7 +4,7 @@
         <% if current_user.id == @user.id %>
         <div class="main-profile">
         <h1 class="user-profile-heading"> user profile</h1>
-                <div class="profile-subdiv"
+                <div class="profile-subdiv">
                     <h2><%= @user.full_name %></h2>
                     <p><%= image_tag(@user.picture, :alt => "rss feed") %></p>
                     <p><%= @user.email %></p>

@@ -45,7 +45,7 @@ end
       parsed_response["_embedded"]["events"].select  do |e|
         e["classifications"][0]["segment"]["id"] === params[:id]
       end
-      
+
       render :index
 
   end
@@ -56,6 +56,7 @@ def saveEvent
      event= getApi(url).parsed_response
      session[:activeEventSearch]= session[:eventId]
     if current_user
+      
         address = event["_embedded"]["venues"][0]["address"]["line1"]
         postalcode = event["_embedded"]["venues"][0]["postalcode"]
         city = event["_embedded"]["venues"][0]["city"]["name"]
@@ -69,17 +70,22 @@ def saveEvent
         newEvent.event_type = event["classifications"][0]["genre"]["name"]
         newEvent.category = event["classifications"][0]["segment"]["name"]
         newEvent.event_date= event["dates"]["start"]["localDate"]
-        newEvent.image_url = event["images"][1]["url"]
+        newEvent.remote_image_url = event["images"][1]["url"]
         newEvent.address = "#{address},#{postalcode},#{city},#{state},#{country}"
         newEvent.event_url = event["url"]
-        if Event.where({user_id: "#{current_user.id}" , event_url:"#{event["url"]}"})
+
+        if Event.where({user_id: current_user.id,event_url:"#{event["url"]}"}).count > 0
+          byebug
             flash[:notice] = "This event is saved already!"
            redirect_to event_details_path(session[:eventId])
         else
+           
             if newEvent.save
+              
               flash[:notice] = "This event is saved successfully!"
               redirect_to event_details_path(session[:eventId])
           else
+             
               redirect_to event_details_path(session[:eventId])
           end
         end
