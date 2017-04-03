@@ -79,6 +79,8 @@ Samantha Garaicoa - CSS, Wireframes, UX<br>
 Robert Romulus - Initial Concept, Image Upload, Gem Wizard<br>
 Geny Cabral - Git Tsar, Troubleshooting, Project Manager<br>
 
+Wireframes and Presentation
+https://drive.google.com/file/d/0B_2xk_qmehtkcTJwSVZpRVZkWWs/view?usp=sharing
 
 Acknowledgments<br>
 Eventbrite<br>
