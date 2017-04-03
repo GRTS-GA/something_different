@@ -19,7 +19,7 @@
         <div class="events-label"><h3>Created By: </h3> <p> <%= @event.user.full_name %></p>
         </div>
 
-        <div class="events-label"><h3>Date: </h3> <p> <%= @event.event_date.strftime("%b %d %I:%M") %></p>
+        <div class="events-label"><h3>Date: </h3> <p> <%= @event.event_date.strftime("%B %e, %Y") %></p>
         </div>
 
         <div class="events-label"><h3>Category: </h3> <p> <%= @event.category %> </p>

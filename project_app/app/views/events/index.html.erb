@@ -19,7 +19,7 @@
                           <p><%= image_tag(ev.image, :alt => "") %></p>
 
 
-                          <label>Date: </label> <%= ev.event_date.strftime("%b %d %I:%M") %> <br>
+                          <label>Date: </label> <%= ev.event_date.strftime("%B %e, %Y") %> <br>
 
                           <p>Created By: <%= ev.user.full_name %></p>
                         </div>
