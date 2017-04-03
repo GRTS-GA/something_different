@@ -13,10 +13,9 @@
 
 <!--                       show each event -->
                       <% @events.each do |ev| %>
-
+                        <h2 class ="evlinks"><%= link_to ev.name,  event_path(ev) %></p>
                         <div class="event-details">
                           <p><%= image_tag(ev.image, :alt => "") %></p>
-                          <label>Name: </label> <p class ="evlinks"><%= link_to ev.name,  event_path(ev) %></p>
 
                           <label>Date: </label> <%= ev.event_date.strftime("%b %d %I:%M") %> <br>
 
