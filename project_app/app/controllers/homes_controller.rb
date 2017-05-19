@@ -1,5 +1,7 @@
 class HomesController < ApplicationController
   # before_action :set_event, only: [:show, :edit, :update, :destroy]
+ 
+
 def index
 
 end
@@ -75,7 +77,7 @@ def saveEvent
         newEvent.event_url = event["url"]
 
         if Event.where({user_id: current_user.id,event_url:"#{event["url"]}"}).count > 0
-          byebug
+          
             flash[:notice] = "This event is saved already!"
            redirect_to event_details_path(session[:eventId])
         else

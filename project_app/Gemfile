@@ -5,10 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'certified'
 # Gem Geokit
 gem 'geokit'
 #HTTParty
 gem 'httparty'
+#vDate from String
+gem 'dates_from_string', '~> 1.2', '>= 1.2.4'
 #Cookie Overflow
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

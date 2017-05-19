@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :loadactiveEventSearch, only:[:create]
    require 'httparty'
    require 'geokit'
+   require 'certified'
+   
 
   def getApi(address)
     response = HTTParty.get(address)

@@ -14,19 +14,22 @@
             <h3>Type:</h3><p> <%=@event["classifications"][0]["genre"]["name"]%></p>
         </div>
         <div class="saved-events-info">
-            <h3>Start Date:</h3><p> <%=@event["dates"]["start"]["localDate"]%></p>
+            <h3>Start Date:</h3><p> <%=Date.parse(@event["dates"]["start"]["localDate"]).strftime("%B %e, %Y")%></p>
         </div>
         <div class="saved-events-info">
-            <h3>End Date:</h3><p> <%=@event["sales"]["public"]["endDateTime"]%></p>
+            <h3>End Date:</h3><p> <%=Date.parse(@event["sales"]["public"]["endDateTime"]).strftime("%B %e, %Y")%></p>
         </div>
         <div class="saved-events-info">
             <h3>Status:</h3><p> <%=@event["dates"]["status"]["code"]%></p>
         </div>
         <div class="saved-events-info">
-            <h3>Time:</h3><p> <%=@event["dates"]["start"]["localTime"]%></p>
+            <h3>Time:</h3><p> <%=@event["dates"]["start"]["localTime"]
+                                    
+                                %>
+                            </p>
         </div>
         <div class="saved-events-info">
-            <h3>Venue:</h3><p> <%=@event["_embedded"]["venues"][0]["name"]%></p>
+            <h3>Venue:</h3><p> <%= @event["_embedded"]["venues"][0]["name"]%></p>
         </div>
         <div class="saved-events-info">
             <h3>Address:</h3><p> <%=@event["_embedded"]["venues"][0]["address"]["line1"]%>
